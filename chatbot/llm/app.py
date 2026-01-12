@@ -1,258 +1,208 @@
 """
-Chatbot de Trivia Académico
-Streamlit + DeepSeek
-
-Incluye:
-- Registro de usuarios
-- Puntaje dinámico
-- Fin automático del juego al fallar
-- API integrada
-- Soporte para ejecución en red
+Juego de Trivia Académico
+Modo Chat
+Fin inmediato al error
 """
 
 import streamlit as st
-import requests
-from typing import List, Dict
+import pandas as pd
+import os
 
-# =========================
-# CONFIGURACIÓN API
-# =========================
+# =============================
+# CONFIGURACIÓN
+# =============================
 
-DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions"
-DEEPSEEK_MODEL = "deepseek-chat"
-DEEPSEEK_API_KEY = "sk-c76f7a44fd974f04ad7593aa6777f170"
+st.set_page_config(
+    page_title="Juego de Trivia",
+    layout="wide"
+)
 
-# =========================
-# PROMPT DEL SISTEMA
-# =========================
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+EXCEL_PATH = os.path.join(BASE_DIR, "categorias (1).xlsx")
 
-SISTEMA_PROMPT = """
-Actúas como un motor de juego de trivia académica.
+# =============================
+# CARGA DE PREGUNTAS
+# =============================
 
-Reglas obligatorias:
-- Solo puedes interactuar dentro del contexto del juego.
-- Si el usuario se sale del contexto, rechaza educadamente.
-- Usa el historial para mantener el estado.
+@st.cache_data
+def cargar_preguntas():
+    df = pd.read_excel(EXCEL_PATH)
+    df.columns = [c.strip().lower() for c in df.columns]
 
-Funciones:
-1. Solicitar modo de juego si no está definido.
-2. Generar preguntas con 4 opciones (A, B, C, D).
-3. Evaluar la respuesta del usuario.
-4. Mantener puntaje y estado del juego.
+    columnas = [
+        "pregunta",
+        "r1 (correcta)",
+        "r2 (incorrecto)",
+        "r3 (incorrecta)",
+        "r4 (incorrecta)"
+    ]
 
-Formato obligatorio de evaluación:
-Evaluación: Correcta
-o
-Evaluación: Incorrecta
+    for c in columnas:
+        if c not in df.columns:
+            st.error(f"Falta la columna requerida: {c}")
+            st.stop()
 
-Reglas del juego:
-- 1 jugador: Si falla, el juego termina.
-- 2 jugadores: Alternar turnos (simulado).
+    return df
 
-Tono:
-Educativo, claro y neutral.
-"""
-
-# =========================
-# CLASE CHATBOT
-# =========================
-
-class ChatbotTrivia:
-    def __init__(self):
-        self.api_key = DEEPSEEK_API_KEY
-        self.historial: List[Dict[str, str]] = []
-
-    def _agregar_sistema(self):
-        if not any(m["role"] == "system" for m in self.historial):
-            self.historial.append({
-                "role": "system",
-                "content": SISTEMA_PROMPT
-            })
-
-    def enviar_mensaje(self, mensaje: str) -> str:
-        if not mensaje.strip():
-            return "El mensaje no puede estar vacío."
-
-        self._agregar_sistema()
-
-        self.historial.append({
-            "role": "user",
-            "content": mensaje
-        })
-
-        headers = {
-            "Authorization": f"Bearer {self.api_key}",
-            "Content-Type": "application/json"
-        }
-
-        payload = {
-            "model": DEEPSEEK_MODEL,
-            "messages": self.historial,
-            "temperature": 0.6,
-            "max_tokens": 2000
-        }
-
-        try:
-            response = requests.post(
-                DEEPSEEK_API_URL,
-                headers=headers,
-                json=payload,
-                timeout=30
-            )
-
-            if response.status_code == 200:
-                data = response.json()
-                respuesta = data["choices"][0]["message"]["content"]
-
-                self.historial.append({
-                    "role": "assistant",
-                    "content": respuesta
-                })
-
-                return respuesta
-            else:
-                return f"Error API: {response.status_code}"
-
-        except requests.exceptions.RequestException as e:
-            return f"Error de conexión: {str(e)}"
-
-    def limpiar(self):
-        self.historial = []
-
-# =========================
-# APP STREAMLIT
-# =========================
+# =============================
+# APP
+# =============================
 
 def main():
-    st.set_page_config(
-        page_title="Juego de Trivia",
-        layout="wide"
-    )
+    st.title("Juego de Trivia")
 
-    st.title("Juego de Trivia Académico")
+    preguntas = cargar_preguntas()
 
-    # =========================
-    # REGISTRO DE USUARIO
-    # =========================
+    # =============================
+    # ESTADO
+    # =============================
 
-    if "usuario" not in st.session_state:
-        st.session_state.usuario = None
+    if "estado" not in st.session_state:
+        st.session_state.estado = "config"
 
-    if st.session_state.usuario is None:
-        st.subheader("Registro de usuario")
-        nombre = st.text_input("Nombre de usuario")
+    # =============================
+    # CONFIGURACIÓN
+    # =============================
 
-        if st.button("Registrar"):
-            if nombre.strip():
-                st.session_state.usuario = nombre
-                st.session_state.puntaje = 0
-                st.session_state.juego_terminado = False
+    if st.session_state.estado == "config":
+        st.subheader("Configuración")
+
+        modo = st.selectbox("Modo de juego", ["1 jugador", "2 jugadores"])
+        jugador1 = st.text_input("Jugador 1")
+
+        jugador2 = None
+        if modo == "2 jugadores":
+            jugador2 = st.text_input("Jugador 2")
+
+        if st.button("Iniciar juego"):
+            if jugador1 and (modo == "1 jugador" or jugador2):
+                st.session_state.modo = modo
+                st.session_state.j1 = jugador1
+                st.session_state.j2 = jugador2
+                st.session_state.turno = 1
+                st.session_state.puntaje1 = 0
+                st.session_state.puntaje2 = 0
+                st.session_state.pregunta = preguntas.sample(1).iloc[0]
+                st.session_state.chat = []
+                st.session_state.estado = "jugando"
                 st.rerun()
-            else:
-                st.warning("El nombre no puede estar vacío.")
         return
 
-    # =========================
-    # ESTADO DEL JUEGO
-    # =========================
-
-    if "puntaje" not in st.session_state:
-        st.session_state.puntaje = 0
-
-    if "juego_terminado" not in st.session_state:
-        st.session_state.juego_terminado = False
-
-    # =========================
+    # =============================
     # SIDEBAR
-    # =========================
+    # =============================
 
-    st.sidebar.success(f"Usuario: {st.session_state.usuario}")
-    st.sidebar.info(f"Puntaje actual: {st.session_state.puntaje}")
+    st.sidebar.header("Puntaje")
+    st.sidebar.write(f"{st.session_state.j1}: {st.session_state.puntaje1}")
 
-    if st.session_state.juego_terminado:
-        st.sidebar.error("Juego terminado")
+    if st.session_state.modo == "2 jugadores":
+        st.sidebar.write(f"{st.session_state.j2}: {st.session_state.puntaje2}")
+        actual = st.session_state.j1 if st.session_state.turno == 1 else st.session_state.j2
+        st.sidebar.warning(f"Turno: {actual}")
 
-    if st.sidebar.button("Reiniciar juego"):
-        st.session_state.puntaje = 0
-        st.session_state.juego_terminado = False
-        st.session_state.mensajes = []
-        st.session_state.chatbot.limpiar()
+    if st.sidebar.button("Reiniciar"):
+        st.session_state.clear()
         st.rerun()
 
-    if st.sidebar.button("Cerrar sesión"):
-        for key in list(st.session_state.keys()):
-            del st.session_state[key]
-        st.rerun()
-
-    # =========================
+    # =============================
     # CHAT
-    # =========================
+    # =============================
 
-    if "chatbot" not in st.session_state:
-        st.session_state.chatbot = ChatbotTrivia()
-
-    if "mensajes" not in st.session_state:
-        st.session_state.mensajes = []
-
-    for msg in st.session_state.mensajes:
+    for msg in st.session_state.chat:
         with st.chat_message(msg["role"]):
             st.markdown(msg["content"])
 
-    if st.session_state.juego_terminado:
-        st.warning("El juego ha terminado. Reinicia para volver a jugar.")
-        return
+    # MOSTRAR PREGUNTA UNA VEZ
+    if len(st.session_state.chat) == 0:
+        p = st.session_state.pregunta
 
-    if prompt := st.chat_input("Escribe tu respuesta o comando"):
-        st.session_state.mensajes.append({
-            "role": "user",
-            "content": prompt
-        })
-
-        with st.chat_message("user"):
-            st.markdown(prompt)
-
-        with st.chat_message("assistant"):
-            respuesta = st.session_state.chatbot.enviar_mensaje(prompt)
-            st.markdown(respuesta)
-
-        # =========================
-        # CONTROL DE PUNTAJE
-        # =========================
-
-        if "Evaluación: Correcta" in respuesta:
-            st.session_state.puntaje += 10
-
-        elif "Evaluación: Incorrecta" in respuesta:
-            st.session_state.juego_terminado = True
-
-        st.session_state.mensajes.append({
+        st.session_state.chat.append({
             "role": "assistant",
+            "content": f"""
+**{p['pregunta']}**
+
+A) {p['r1 (correcta)']}
+B) {p['r2 (incorrecto)']}
+C) {p['r3 (incorrecta)']}
+D) {p['r4 (incorrecta)']}
+
+Escribe la letra o la respuesta.
+"""
+        })
+        st.rerun()
+
+    # =============================
+    # INPUT
+    # =============================
+
+    if respuesta := st.chat_input("Escribe tu respuesta..."):
+        respuesta = respuesta.strip().lower()
+
+        st.session_state.chat.append({
+            "role": "user",
             "content": respuesta
         })
 
-    # =========================
-    # MENSAJE INICIAL
-    # =========================
+        correcta_texto = str(st.session_state.pregunta["r1 (correcta)"]).strip().lower()
+        correcta_letra = "a"
 
-    if len(st.session_state.mensajes) == 0:
-        bienvenida = (
-            "Bienvenido al juego de trivia.\n\n"
-            "Escribe:\n"
-            "- Iniciar modo 1 jugador\n"
-            "- Iniciar modo 2 jugadores"
-        )
+        # =============================
+        # VALIDACIÓN CORRECTA
+        # =============================
 
-        with st.chat_message("assistant"):
-            st.markdown(bienvenida)
+        if (
+            respuesta == correcta_letra
+            or respuesta == correcta_texto
+            or respuesta == f"a) {correcta_texto}"
+        ):
+            st.session_state.chat.append({
+                "role": "assistant",
+                "content": "✅ Respuesta correcta. Continúas."
+            })
 
-        st.session_state.mensajes.append({
-            "role": "assistant",
-            "content": bienvenida
-        })
+            if st.session_state.turno == 1:
+                st.session_state.puntaje1 += 10
+            else:
+                st.session_state.puntaje2 += 10
 
-# =========================
-# EJECUCIÓN
-# =========================
+            if st.session_state.modo == "2 jugadores":
+                st.session_state.turno = 2 if st.session_state.turno == 1 else 1
+
+            st.session_state.pregunta = preguntas.sample(1).iloc[0]
+            st.session_state.chat = []
+            st.rerun()
+
+        # =============================
+        # INCORRECTA → FIN
+        # =============================
+
+        else:
+            if st.session_state.modo == "1 jugador":
+                mensaje = (
+                    "❌ Respuesta incorrecta.\n\n"
+                    "Juego terminado.\n\n"
+                    f"✅ Respuesta correcta: **{correcta_texto.capitalize()}**\n\n"
+                    f"Puntaje final: {st.session_state.puntaje1}"
+                )
+            else:
+                ganador = st.session_state.j2 if st.session_state.turno == 1 else st.session_state.j1
+                mensaje = (
+                    "❌ Respuesta incorrecta.\n\n"
+                    f"🏆 Ganador: **{ganador}**\n\n"
+                    f"✅ Respuesta correcta: **{correcta_texto.capitalize()}**"
+                )
+
+            st.session_state.chat.append({
+                "role": "assistant",
+                "content": mensaje
+            })
+
+            st.session_state.estado = "fin"
+            st.rerun()
+
+# =============================
+# RUN
+# =============================
 
 if __name__ == "__main__":
     main()
