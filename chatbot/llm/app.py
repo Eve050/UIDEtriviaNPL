@@ -70,22 +70,40 @@ def main():
         modo = st.selectbox("Modo de juego", ["1 jugador", "2 jugadores"])
         jugador1 = st.text_input("Jugador 1")
 
-        jugador2 = None
+        jugador2 = ""
         if modo == "2 jugadores":
             jugador2 = st.text_input("Jugador 2")
 
         if st.button("Iniciar juego"):
-            if jugador1 and (modo == "1 jugador" or jugador2):
-                st.session_state.modo = modo
-                st.session_state.j1 = jugador1
-                st.session_state.j2 = jugador2
-                st.session_state.turno = 1
-                st.session_state.puntaje1 = 0
-                st.session_state.puntaje2 = 0
-                st.session_state.pregunta = preguntas.sample(1).iloc[0]
-                st.session_state.chat = []
-                st.session_state.estado = "jugando"
-                st.rerun()
+            # Validar que los campos necesarios estén llenos
+            if modo == "1 jugador":
+                if jugador1.strip():
+                    st.session_state.modo = modo
+                    st.session_state.j1 = jugador1
+                    st.session_state.j2 = None
+                    st.session_state.turno = 1
+                    st.session_state.puntaje1 = 0
+                    st.session_state.puntaje2 = 0
+                    st.session_state.pregunta = preguntas.sample(1).iloc[0]
+                    st.session_state.chat = []
+                    st.session_state.estado = "jugando"
+                    st.rerun()
+                else:
+                    st.error("Por favor ingresa el nombre del Jugador 1")
+            else:  # modo == "2 jugadores"
+                if jugador1.strip() and jugador2.strip():
+                    st.session_state.modo = modo
+                    st.session_state.j1 = jugador1
+                    st.session_state.j2 = jugador2
+                    st.session_state.turno = 1
+                    st.session_state.puntaje1 = 0
+                    st.session_state.puntaje2 = 0
+                    st.session_state.pregunta = preguntas.sample(1).iloc[0]
+                    st.session_state.chat = []
+                    st.session_state.estado = "jugando"
+                    st.rerun()
+                else:
+                    st.error("Por favor ingresa los nombres de ambos jugadores")
         return
 
     # =============================
@@ -93,16 +111,26 @@ def main():
     # =============================
 
     st.sidebar.header("Puntaje")
-    st.sidebar.write(f"{st.session_state.j1}: {st.session_state.puntaje1}")
+    st.sidebar.write(f"🎮 {st.session_state.j1}: {st.session_state.puntaje1}")
 
     if st.session_state.modo == "2 jugadores":
-        st.sidebar.write(f"{st.session_state.j2}: {st.session_state.puntaje2}")
+        st.sidebar.write(f"🎮 {st.session_state.j2}: {st.session_state.puntaje2}")
         actual = st.session_state.j1 if st.session_state.turno == 1 else st.session_state.j2
-        st.sidebar.warning(f"Turno: {actual}")
+        st.sidebar.warning(f"🎯 Turno: {actual}")
 
     if st.sidebar.button("Reiniciar"):
         st.session_state.clear()
         st.rerun()
+
+    # =============================
+    # ESTADO FIN
+    # =============================
+    
+    if st.session_state.estado == "fin":
+        for msg in st.session_state.chat:
+            with st.chat_message(msg["role"]):
+                st.markdown(msg["content"])
+        return
 
     # =============================
     # CHAT
@@ -115,11 +143,16 @@ def main():
     # MOSTRAR PREGUNTA UNA VEZ
     if len(st.session_state.chat) == 0:
         p = st.session_state.pregunta
+        
+        turno_msg = ""
+        if st.session_state.modo == "2 jugadores":
+            actual = st.session_state.j1 if st.session_state.turno == 1 else st.session_state.j2
+            turno_msg = f"**Turno de: {actual}**\n\n"
 
         st.session_state.chat.append({
             "role": "assistant",
             "content": f"""
-**{p['pregunta']}**
+{turno_msg}**{p['pregunta']}**
 
 A) {p['r1 (correcta)']}
 B) {p['r2 (incorrecto)']}
@@ -155,19 +188,22 @@ Escribe la letra o la respuesta.
             or respuesta == correcta_texto
             or respuesta == f"a) {correcta_texto}"
         ):
-            st.session_state.chat.append({
-                "role": "assistant",
-                "content": "✅ Respuesta correcta. Continúas."
-            })
-
+            # Sumar puntos al jugador actual
             if st.session_state.turno == 1:
                 st.session_state.puntaje1 += 10
             else:
                 st.session_state.puntaje2 += 10
 
+            st.session_state.chat.append({
+                "role": "assistant",
+                "content": "✅ Respuesta correcta."
+            })
+
+            # En modo 2 jugadores, cambiar turno después de respuesta correcta
             if st.session_state.modo == "2 jugadores":
                 st.session_state.turno = 2 if st.session_state.turno == 1 else 1
 
+            # Nueva pregunta
             st.session_state.pregunta = preguntas.sample(1).iloc[0]
             st.session_state.chat = []
             st.rerun()
@@ -185,11 +221,19 @@ Escribe la letra o la respuesta.
                     f"Puntaje final: {st.session_state.puntaje1}"
                 )
             else:
+                # En modo 2 jugadores, el jugador que NO falló gana
                 ganador = st.session_state.j2 if st.session_state.turno == 1 else st.session_state.j1
+                perdedor = st.session_state.j1 if st.session_state.turno == 1 else st.session_state.j2
+                puntaje_ganador = st.session_state.puntaje2 if st.session_state.turno == 1 else st.session_state.puntaje1
+                puntaje_perdedor = st.session_state.puntaje1 if st.session_state.turno == 1 else st.session_state.puntaje2
+                
                 mensaje = (
-                    "❌ Respuesta incorrecta.\n\n"
-                    f"🏆 Ganador: **{ganador}**\n\n"
-                    f"✅ Respuesta correcta: **{correcta_texto.capitalize()}**"
+                    f"❌ {perdedor} respondió incorrectamente.\n\n"
+                    f"🏆 **Ganador: {ganador}**\n\n"
+                    f"✅ Respuesta correcta: **{correcta_texto.capitalize()}**\n\n"
+                    f"**Puntajes finales:**\n"
+                    f"- {ganador}: {puntaje_ganador} puntos\n"
+                    f"- {perdedor}: {puntaje_perdedor} puntos"
                 )
 
             st.session_state.chat.append({
