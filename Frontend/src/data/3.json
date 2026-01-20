@@ -75,11 +75,11 @@
     "question": "¿Qué es la 'batería' en una computadora portátil?",
     "options": [
       "El programa que mide el tiempo",
-      "Una pieza que almacena energía para usarla sin cable",
       "El ventilador que enfría el equipo",
+      "Una pieza que almacena energía para usarla sin cable",
       "Un virus que gasta mucha luz"
     ],
-    "correct": 1,
+    "correct": 2,
     "prize": 100,
     "category": "Hardware"
   },
@@ -147,11 +147,11 @@
     "question": "¿Qué es un buscador de internet (ej. Google, Bing)?",
     "options": [
       "Un juego de laberintos",
-      "Una herramienta para encontrar información en la web",
       "Un cable para conectar el modem",
-      "Un programa para limpiar el teclado"
+      "Un programa para limpiar el teclado",
+      "Una herramienta para encontrar información en la web"
     ],
-    "correct": 1,
+    "correct": 3,
     "prize": 100,
     "category": "Internet"
   },
@@ -171,11 +171,11 @@
     "question": "¿Qué significa 'descargar' (download) un archivo?",
     "options": [
       "Borrarlo del disco duro",
-      "Bajar un archivo de internet a nuestra computadora",
       "Cambiar el color de un documento",
+      "Bajar un archivo de internet a nuestra computadora",
       "Imprimirlo en papel"
     ],
-    "correct": 1,
+    "correct": 2,
     "prize": 100,
     "category": "Internet"
   },
@@ -219,11 +219,11 @@
     "question": "¿Qué se necesita para tener internet inalámbrico en casa?",
     "options": [
       "Un cable muy largo hasta la calle",
-      "Un router con señal Wi-Fi",
       "Muchos monitores encendidos",
-      "Una impresora láser"
+      "Una impresora láser",
+      "Un router con señal Wi-Fi"
     ],
-    "correct": 1,
+    "correct": 3,
     "prize": 100,
     "category": "Internet"
   },
@@ -231,11 +231,11 @@
     "question": "¿Para qué sirve el programa 'Calculadora' en la PC?",
     "options": [
       "Para escribir cuentos cortos",
-      "Para realizar operaciones matemáticas",
       "Para ver fotos del celular",
+      "Para realizar operaciones matemáticas",
       "Para navegar por redes sociales"
     ],
-    "correct": 1,
+    "correct": 2,
     "prize": 100,
     "category": "Software"
   },

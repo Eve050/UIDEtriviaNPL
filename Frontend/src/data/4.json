@@ -27,11 +27,11 @@
     "question": "¿Qué significa que un archivo esté en formato '.txt'?",
     "options": [
       "Que es un video de alta calidad",
-      "Que es un archivo de texto simple",
       "Que es una canción",
-      "Que es un programa instalador"
+      "Que es un programa instalador",
+      "Que es un archivo de texto simple"
     ],
-    "correct": 1,
+    "correct": 3,
     "prize": 100,
     "category": "Conceptos"
   },
@@ -50,12 +50,12 @@
   {
     "question": "¿Para qué sirve el botón 'Actualizar' (o la tecla F5) en el navegador?",
     "options": [
-      "Para borrar el historial",
       "Para volver a cargar la página actual",
+      "Para borrar el historial",
       "Para cerrar la sesión",
       "Para apagar el router"
     ],
-    "correct": 1,
+    "correct": 0,
     "prize": 100,
     "category": "Internet"
   },
@@ -75,11 +75,11 @@
     "question": "¿Qué es la 'Barra de Tareas'?",
     "options": [
       "Un cable que conecta la pantalla",
-      "La franja inferior donde aparecen los programas abiertos e iconos",
       "Una lista de virus detectados",
-      "El lugar donde se guardan las pilas"
+      "El lugar donde se guardan las pilas",
+      "La franja inferior donde aparecen los programas abiertos e iconos"
     ],
-    "correct": 1,
+    "correct": 3,
     "prize": 100,
     "category": "Uso de Sistema"
   },
@@ -123,11 +123,11 @@
     "question": "¿Cuál es la principal diferencia entre una PC de escritorio y una Laptop?",
     "options": [
       "La PC de escritorio no usa electricidad",
-      "La Laptop es portátil y tiene batería integrada",
       "La PC de escritorio no tiene monitor",
+      "La Laptop es portátil y tiene batería integrada",
       "La Laptop no puede conectarse a internet"
     ],
-    "correct": 1,
+    "correct": 2,
     "prize": 100,
     "category": "Hardware"
   },
@@ -146,12 +146,12 @@
   {
     "question": "¿Qué significa 'cerrar sesión'?",
     "options": [
-      "Apagar la computadora a la fuerza",
       "Salir de una cuenta personal de forma segura",
+      "Apagar la computadora a la fuerza",
       "Borrar todos los archivos del usuario",
       "Formatear el disco duro"
     ],
-    "correct": 1,
+    "correct": 0,
     "prize": 100,
     "category": "Seguridad"
   },
@@ -170,12 +170,12 @@
   {
     "question": "¿Cuál de estos es un programa para ver fotos?",
     "options": [
-      "Calculadora",
       "Visor de imágenes o Fotos",
+      "Calculadora",
       "Bloc de notas",
       "Antivirus"
     ],
-    "correct": 1,
+    "correct": 0,
     "prize": 100,
     "category": "Software"
   },
@@ -195,11 +195,11 @@
     "question": "¿Qué componente permite a la computadora reproducir audio?",
     "options": [
       "La tarjeta de red",
-      "La tarjeta de sonido y parlantes",
       "El teclado",
-      "El cable de alimentación"
+      "El cable de alimentación",
+      "La tarjeta de sonido y parlantes"
     ],
-    "correct": 1,
+    "correct": 3,
     "prize": 100,
     "category": "Hardware"
   },

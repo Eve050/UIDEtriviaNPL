@@ -2,12 +2,12 @@
   {
     "question": "¿Qué componente se utiliza para mover el puntero y seleccionar elementos en la pantalla?",
     "options": [
-      "Teclado",
       "Ratón (Mouse)",
+      "Teclado",
       "Impresora",
       "Monitor"
     ],
-    "correct": 1,
+    "correct": 0,
     "prize": 100,
     "category": "Hardware"
   },
@@ -27,11 +27,11 @@
     "question": "¿Qué significa 'iniciar sesión'?",
     "options": [
       "Borrar el historial de internet",
-      "Ingresar a una cuenta con usuario y contraseña",
       "Apagar la computadora correctamente",
-      "Instalar un nuevo juego"
+      "Instalar un nuevo juego",
+      "Ingresar a una cuenta con usuario y contraseña"
     ],
-    "correct": 1,
+    "correct": 3,
     "prize": 100,
     "category": "Seguridad"
   },
@@ -63,11 +63,11 @@
     "question": "¿Cuál de estos es un ejemplo de dispositivo de entrada?",
     "options": [
       "Monitor",
-      "Teclado",
       "Impresora",
+      "Teclado",
       "Parlantes"
     ],
-    "correct": 1,
+    "correct": 2,
     "prize": 100,
     "category": "Hardware"
   },
@@ -86,12 +86,12 @@
   {
     "question": "¿Qué es una red Wi-Fi?",
     "options": [
-      "Un cable grueso para internet",
       "Una conexión inalámbrica para datos",
+      "Un cable grueso para internet",
       "Un programa para escribir cartas",
       "Una pieza del disco duro"
     ],
-    "correct": 1,
+    "correct": 0,
     "prize": 100,
     "category": "Internet"
   },
@@ -147,11 +147,10 @@
     "question": "¿Qué es la 'Memoria RAM' de forma sencilla?",
     "options": [
       "Donde se guardan las fotos para siempre",
-      "Donde la PC guarda datos rápidos mientras trabaja",
       "El nombre de la marca de la PC",
-      "Un cable de conexión"
-    ],
-    "correct": 1,
+      "Donde la PC guarda datos rápidos mientras trabaja"
+     ],
+    "correct": 3,
     "prize": 100,
     "category": "Hardware"
   },
@@ -206,12 +205,12 @@
   {
     "question": "¿Qué significa 'subir' un archivo a internet?",
     "options": [
-      "Borrarlo de la PC",
       "Enviar un archivo desde tu equipo a la red",
+      "Borrarlo de la PC",
       "Cambiarle el nombre al archivo",
       "Imprimirlo en alta calidad"
     ],
-    "correct": 1,
+    "correct": 0,
     "prize": 100,
     "category": "Internet"
   },
@@ -231,11 +230,11 @@
     "question": "¿Qué es el 'Hardware'?",
     "options": [
       "Los programas como Word",
-      "Las partes físicas que puedes tocar",
       "Los juegos de la PC",
+      "Las partes físicas que puedes tocar",
       "Las páginas web"
     ],
-    "correct": 1,
+    "correct": 2,
     "prize": 100,
     "category": "Conceptos"
   },
