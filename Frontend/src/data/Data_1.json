@@ -1,0 +1,242 @@
+[
+  {
+    "question": "¿Qué protocolo de red utiliza el puerto 443 por defecto?",
+    "options": [
+      "HTTP",
+      "FTP",
+      "HTTPS",
+      "SSH"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Qué lenguaje de programación fue creado por Guido van Rossum?",
+    "options": [
+      "Java",
+      "Python",
+      "C++",
+      "Ruby"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Programación"
+  },
+  {
+    "question": "¿Qué significa la sigla 'SQL'?",
+    "options": [
+      "Structured Query Language",
+      "Simple Query Language",
+      "System Query Logic",
+      "Standard Question Language"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Bases de Datos"
+  },
+  {
+    "question": "¿Qué tipo de ataque consiste en inundar un servidor con solicitudes falsas?",
+    "options": [
+      "Phishing",
+      "DDoS",
+      "Malware",
+      "Man-in-the-middle"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Ciberseguridad"
+  },
+  {
+    "question": "¿Qué estructura de datos sigue el principio LIFO?",
+    "options": [
+      "Cola",
+      "Lista",
+      "Pila",
+      "Árbol"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Algoritmos"
+  },
+  {
+    "question": "¿Qué sistema operativo es de código abierto y basado en Linux?",
+    "options": [
+      "Windows",
+      "macOS",
+      "Ubuntu",
+      "iOS"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Sistemas Operativos"
+  },
+  {
+    "question": "¿Qué tecnología permite ejecutar múltiples sistemas operativos en una sola máquina física?",
+    "options": [
+      "Contenedores",
+      "Virtualización",
+      "Cloud Computing",
+      "Clustering"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Infraestructura"
+  },
+  {
+    "question": "¿Qué lenguaje se utiliza principalmente para el desarrollo frontend web?",
+    "options": [
+      "Python",
+      "JavaScript",
+      "C#",
+      "PHP"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Desarrollo Web"
+  },
+  {
+    "question": "¿Qué base de datos NoSQL es conocida por su uso de documentos JSON?",
+    "options": [
+      "MySQL",
+      "MongoDB",
+      "Oracle",
+      "PostgreSQL"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Bases de Datos"
+  },
+  {
+    "question": "¿Qué protocolo se utiliza para enviar correos electrónicos?",
+    "options": [
+      "HTTP",
+      "FTP",
+      "SMTP",
+      "TCP"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Qué herramienta de control de versiones fue creada por Linus Torvalds?",
+    "options": [
+      "Git",
+      "SVN",
+      "Mercurial",
+      "CVS"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Desarrollo"
+  },
+  {
+    "question": "¿Qué tipo de prueba verifica que el software cumple con los requisitos especificados?",
+    "options": [
+      "Prueba de unidad",
+      "Prueba de integración",
+      "Prueba de aceptación",
+      "Prueba de rendimiento"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Testing"
+  },
+  {
+    "question": "¿Qué arquitectura de software separa la lógica de negocio, la presentación y los datos?",
+    "options": [
+      "MVC",
+      "REST",
+      "SOAP",
+      "Microservicios"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Arquitectura"
+  },
+  {
+    "question": "¿Qué lenguaje de marcado se utiliza para definir la estructura de una página web?",
+    "options": [
+      "CSS",
+      "JavaScript",
+      "HTML",
+      "XML"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Desarrollo Web"
+  },
+  {
+    "question": "¿Qué servicio de AWS proporciona almacenamiento de objetos escalable?",
+    "options": [
+      "EC2",
+      "S3",
+      "RDS",
+      "Lambda"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Cloud Computing"
+  },
+  {
+    "question": "¿Qué algoritmo de encriptación es simétrico y utiliza bloques de 128 bits?",
+    "options": [
+      "RSA",
+      "AES",
+      "SHA-256",
+      "MD5"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Ciberseguridad"
+  },
+  {
+    "question": "¿Qué paradigma de programación se basa en objetos y clases?",
+    "options": [
+      "Funcional",
+      "Orientado a objetos",
+      "Procedural",
+      "Lógico"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Programación"
+  },
+  {
+    "question": "¿Qué herramienta se utiliza para automatizar el despliegue de aplicaciones en contenedores?",
+    "options": [
+      "Docker",
+      "Kubernetes",
+      "Jenkins",
+      "Ansible"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "DevOps"
+  },
+  {
+    "question": "¿Qué tipo de memoria es volátil y se utiliza como RAM?",
+    "options": [
+      "ROM",
+      "Cache",
+      "SSD",
+      "DRAM"
+    ],
+    "correct": 3,
+    "prize": 100,
+    "category": "Hardware"
+  },
+  {
+    "question": "¿Qué lenguaje de consulta se utiliza en GraphQL?",
+    "options": [
+      "SQL",
+      "GraphQL Query Language",
+      "JSON",
+      "XML"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "APIs"
+  }
+]

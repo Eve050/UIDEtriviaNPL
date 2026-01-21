@@ -1,0 +1,242 @@
+[
+  {
+    "question": "¿Qué protocolo de red se utiliza para asignar direcciones IP dinámicas a dispositivos en una red?",
+    "options": [
+      "HTTP",
+      "DNS",
+      "DHCP",
+      "FTP"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "En programación, ¿qué estructura de datos sigue el principio LIFO (Last In, First Out)?",
+    "options": [
+      "Cola",
+      "Lista enlazada",
+      "Pila",
+      "Árbol binario"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Programación"
+  },
+  {
+    "question": "¿Qué lenguaje de consulta se utiliza comúnmente para interactuar con bases de datos relacionales?",
+    "options": [
+      "Python",
+      "SQL",
+      "Java",
+      "HTML"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Bases de Datos"
+  },
+  {
+    "question": "¿Qué tipo de ataque cibernético implica engañar a un usuario para que revele información confidencial?",
+    "options": [
+      "DoS",
+      "Phishing",
+      "Malware",
+      "Ransomware"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Ciberseguridad"
+  },
+  {
+    "question": "¿Qué tecnología permite ejecutar múltiples sistemas operativos en un solo hardware físico?",
+    "options": [
+      "Contenedores",
+      "Virtualización",
+      "Cloud Computing",
+      "Big Data"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Infraestructura"
+  },
+  {
+    "question": "¿Qué algoritmo de encriptación asimétrica es ampliamente utilizado para la seguridad en internet?",
+    "options": [
+      "AES",
+      "DES",
+      "RSA",
+      "MD5"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Ciberseguridad"
+  },
+  {
+    "question": "En desarrollo web, ¿qué tecnología se utiliza para dar estilo a las páginas HTML?",
+    "options": [
+      "JavaScript",
+      "CSS",
+      "PHP",
+      "XML"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Desarrollo Web"
+  },
+  {
+    "question": "¿Qué base de datos NoSQL es conocida por su uso en aplicaciones de big data y análisis en tiempo real?",
+    "options": [
+      "MySQL",
+      "MongoDB",
+      "Oracle",
+      "PostgreSQL"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Bases de Datos"
+  },
+  {
+    "question": "¿Qué herramienta de control de versiones es popular entre desarrolladores para gestionar cambios en el código?",
+    "options": [
+      "Git",
+      "SVN",
+      "Mercurial",
+      "CVS"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Desarrollo"
+  },
+  {
+    "question": "¿Qué protocolo seguro se utiliza para transmitir datos de forma cifrada en la web?",
+    "options": [
+      "HTTP",
+      "FTP",
+      "HTTPS",
+      "SMTP"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Qué paradigma de programación se centra en objetos que contienen datos y métodos?",
+    "options": [
+      "Funcional",
+      "Orientado a objetos",
+      "Procedural",
+      "Lógico"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Programación"
+  },
+  {
+    "question": "¿Qué servicio en la nube de Amazon proporciona almacenamiento escalable?",
+    "options": [
+      "EC2",
+      "S3",
+      "Lambda",
+      "RDS"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Cloud Computing"
+  },
+  {
+    "question": "¿Qué lenguaje de programación es conocido por su uso en ciencia de datos y machine learning?",
+    "options": [
+      "C++",
+      "Python",
+      "Ruby",
+      "Swift"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Programación"
+  },
+  {
+    "question": "¿Qué tipo de prueba de software verifica que los componentes individuales funcionen correctamente?",
+    "options": [
+      "Prueba de integración",
+      "Prueba unitaria",
+      "Prueba de sistema",
+      "Prueba de aceptación"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Calidad de Software"
+  },
+  {
+    "question": "¿Qué framework de JavaScript es popular para construir interfaces de usuario interactivas?",
+    "options": [
+      "Angular",
+      "React",
+      "Vue.js",
+      "Todos los anteriores"
+    ],
+    "correct": 3,
+    "prize": 100,
+    "category": "Desarrollo Web"
+  },
+  {
+    "question": "¿Qué protocolo se utiliza para enviar correos electrónicos desde un cliente a un servidor?",
+    "options": [
+      "POP3",
+      "IMAP",
+      "SMTP",
+      "HTTP"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Qué tecnología permite a los desarrolladores empaquetar aplicaciones con todas sus dependencias?",
+    "options": [
+      "Virtualización",
+      "Contenedores",
+      "Microservicios",
+      "APIs"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Infraestructura"
+  },
+  {
+    "question": "¿Qué base de datos en memoria es conocida por su alta velocidad y uso en caching?",
+    "options": [
+      "MySQL",
+      "Redis",
+      "MongoDB",
+      "Cassandra"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Bases de Datos"
+  },
+  {
+    "question": "¿Qué metodología ágil se centra en entregas iterativas y colaboración continua?",
+    "options": [
+      "Waterfall",
+      "Scrum",
+      "Kanban",
+      "Lean"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Gestión de Proyectos"
+  },
+  {
+    "question": "¿Qué herramienta se utiliza para automatizar el despliegue y configuración de infraestructura?",
+    "options": [
+      "Docker",
+      "Kubernetes",
+      "Ansible",
+      "Jenkins"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "DevOps"
+  }
+]

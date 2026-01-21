@@ -1,0 +1,242 @@
+[
+  {
+    "question": "¿Qué protocolo de red se utiliza para asignar direcciones IP dinámicamente a dispositivos en una red?",
+    "options": [
+      "HTTP",
+      "DHCP",
+      "FTP",
+      "DNS"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Cuál de las siguientes es una base de datos NoSQL?",
+    "options": [
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Oracle"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Bases de Datos"
+  },
+  {
+    "question": "¿Qué lenguaje de programación es conocido por su uso en desarrollo web del lado del cliente?",
+    "options": [
+      "Python",
+      "Java",
+      "JavaScript",
+      "C++"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Programación"
+  },
+  {
+    "question": "¿Qué tecnología permite la virtualización de sistemas operativos en un solo hardware físico?",
+    "options": [
+      "Docker",
+      "Kubernetes",
+      "Hypervisor",
+      "Git"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Virtualización"
+  },
+  {
+    "question": "¿Cuál es el propósito principal de un firewall en una red?",
+    "options": [
+      "Acelerar la conexión",
+      "Filtrar tráfico no autorizado",
+      "Asignar direcciones IP",
+      "Almacenar datos"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Seguridad"
+  },
+  {
+    "question": "¿Qué significa la sigla API en el contexto de desarrollo de software?",
+    "options": [
+      "Application Programming Interface",
+      "Advanced Programming Integration",
+      "Automated Process Interface",
+      "Application Process Integration"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Desarrollo"
+  },
+  {
+    "question": "¿Qué estructura de datos funciona con el principio LIFO (Last In, First Out)?",
+    "options": [
+      "Cola",
+      "Lista",
+      "Pila",
+      "Árbol"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Estructuras de Datos"
+  },
+  {
+    "question": "¿Qué herramienta se utiliza comúnmente para control de versiones en desarrollo de software?",
+    "options": [
+      "Jenkins",
+      "Git",
+      "Docker",
+      "Kubernetes"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Herramientas"
+  },
+  {
+    "question": "¿Qué tipo de ataque cibernético implica engañar a un usuario para que revele información confidencial?",
+    "options": [
+      "DDoS",
+      "Phishing",
+      "Malware",
+      "Ransomware"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Ciberseguridad"
+  },
+  {
+    "question": "¿Qué protocolo seguro se utiliza para transmitir datos encriptados en la web?",
+    "options": [
+      "HTTP",
+      "FTP",
+      "HTTPS",
+      "SMTP"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Protocolos"
+  },
+  {
+    "question": "¿Qué paradigma de programación se centra en objetos y clases?",
+    "options": [
+      "Funcional",
+      "Orientado a Objetos",
+      "Procedural",
+      "Lógico"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Programación"
+  },
+  {
+    "question": "¿Qué componente de hardware es responsable de ejecutar instrucciones en una computadora?",
+    "options": [
+      "RAM",
+      "CPU",
+      "Disco Duro",
+      "GPU"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Hardware"
+  },
+  {
+    "question": "¿Qué lenguaje de consulta se utiliza para interactuar con bases de datos relacionales?",
+    "options": [
+      "Python",
+      "SQL",
+      "HTML",
+      "JSON"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Bases de Datos"
+  },
+  {
+    "question": "¿Qué tecnología permite el desarrollo de aplicaciones que se ejecutan en múltiples plataformas?",
+    "options": [
+      "React Native",
+      "Windows Forms",
+      "Java Swing",
+      "Qt"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Desarrollo"
+  },
+  {
+    "question": "¿Qué tipo de memoria es volátil y se utiliza para almacenar datos temporalmente?",
+    "options": [
+      "ROM",
+      "RAM",
+      "SSD",
+      "HDD"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Hardware"
+  },
+  {
+    "question": "¿Qué framework de JavaScript es popular para construir interfaces de usuario?",
+    "options": [
+      "Django",
+      "Spring",
+      "React",
+      "Laravel"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Frameworks"
+  },
+  {
+    "question": "¿Qué algoritmo de encriptación simétrica es ampliamente utilizado?",
+    "options": [
+      "RSA",
+      "AES",
+      "SHA-256",
+      "MD5"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Criptografía"
+  },
+  {
+    "question": "¿Qué servicio en la nube de Amazon proporciona almacenamiento de objetos?",
+    "options": [
+      "EC2",
+      "S3",
+      "Lambda",
+      "RDS"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Cloud Computing"
+  },
+  {
+    "question": "¿Qué patrón de diseño se utiliza para crear objetos sin especificar la clase exacta?",
+    "options": [
+      "Singleton",
+      "Factory",
+      "Observer",
+      "Decorator"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Patrones de Diseño"
+  },
+  {
+    "question": "¿Qué herramienta se utiliza para automatizar el despliegue de aplicaciones en contenedores?",
+    "options": [
+      "Git",
+      "Jenkins",
+      "Docker Compose",
+      "Kubernetes"
+    ],
+    "correct": 3,
+    "prize": 100,
+    "category": "DevOps"
+  }
+]

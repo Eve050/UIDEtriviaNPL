@@ -1,0 +1,242 @@
+[
+  {
+    "question": "¿Qué protocolo de red utiliza el puerto 443 por defecto?",
+    "options": [
+      "HTTP",
+      "FTP",
+      "HTTPS",
+      "SSH"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Cuál de estos lenguajes es principalmente de tipado estático?",
+    "options": [
+      "Python",
+      "JavaScript",
+      "Java",
+      "Ruby"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Programación"
+  },
+  {
+    "question": "¿Qué significa la sigla 'API' en desarrollo de software?",
+    "options": [
+      "Application Programming Interface",
+      "Advanced Programming Interface",
+      "Automated Program Integration",
+      "Application Process Integration"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Desarrollo"
+  },
+  {
+    "question": "¿Qué tipo de ataque consiste en inyectar código SQL malicioso?",
+    "options": [
+      "Phishing",
+      "DDoS",
+      "SQL Injection",
+      "Man-in-the-middle"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Seguridad"
+  },
+  {
+    "question": "¿Qué estructura de datos funciona con el principio LIFO?",
+    "options": [
+      "Cola",
+      "Lista enlazada",
+      "Pila",
+      "Árbol binario"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Algoritmos"
+  },
+  {
+    "question": "¿Qué sistema operativo es de código abierto y basado en Linux?",
+    "options": [
+      "Windows",
+      "macOS",
+      "Ubuntu",
+      "iOS"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Sistemas Operativos"
+  },
+  {
+    "question": "¿Qué protocolo se usa para asignar direcciones IP automáticamente?",
+    "options": [
+      "DNS",
+      "DHCP",
+      "TCP",
+      "UDP"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Qué lenguaje se usa comúnmente para estilizar páginas web?",
+    "options": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "PHP"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Desarrollo Web"
+  },
+  {
+    "question": "¿Qué base de datos es NoSQL y orientada a documentos?",
+    "options": [
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Oracle"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Bases de Datos"
+  },
+  {
+    "question": "¿Qué herramienta se usa para control de versiones en desarrollo?",
+    "options": [
+      "Docker",
+      "Git",
+      "Jenkins",
+      "Kubernetes"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "DevOps"
+  },
+  {
+    "question": "¿Qué tipo de virtualización permite ejecutar múltiples sistemas operativos en un solo hardware?",
+    "options": [
+      "Virtualización de servidores",
+      "Virtualización de escritorio",
+      "Virtualización de aplicaciones",
+      "Virtualización de red"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Virtualización"
+  },
+  {
+    "question": "¿Qué algoritmo de encriptación es simétrico y usa una clave de 128, 192 o 256 bits?",
+    "options": [
+      "RSA",
+      "AES",
+      "SHA-256",
+      "MD5"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Seguridad"
+  },
+  {
+    "question": "¿Qué paradigma de programación se basa en objetos y clases?",
+    "options": [
+      "Programación funcional",
+      "Programación orientada a objetos",
+      "Programación procedural",
+      "Programación lógica"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Programación"
+  },
+  {
+    "question": "¿Qué servicio en la nube de Amazon ofrece almacenamiento de objetos?",
+    "options": [
+      "EC2",
+      "S3",
+      "RDS",
+      "Lambda"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Cloud Computing"
+  },
+  {
+    "question": "¿Qué lenguaje se usa para consultas en bases de datos relacionales?",
+    "options": [
+      "NoSQL",
+      "SQL",
+      "JSON",
+      "XML"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Bases de Datos"
+  },
+  {
+    "question": "¿Qué tecnología permite la ejecución de código JavaScript en el servidor?",
+    "options": [
+      "Node.js",
+      "React",
+      "Angular",
+      "Vue.js"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Desarrollo Web"
+  },
+  {
+    "question": "¿Qué tipo de prueba verifica que el software cumple con los requisitos especificados?",
+    "options": [
+      "Prueba de unidad",
+      "Prueba de integración",
+      "Prueba de sistema",
+      "Prueba de aceptación"
+    ],
+    "correct": 3,
+    "prize": 100,
+    "category": "Testing"
+  },
+  {
+    "question": "¿Qué protocolo de correo electrónico utiliza el puerto 25?",
+    "options": [
+      "IMAP",
+      "POP3",
+      "SMTP",
+      "HTTP"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Qué framework de Python es popular para desarrollo web?",
+    "options": [
+      "Django",
+      "Flask",
+      "Spring",
+      "Ruby on Rails"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Desarrollo"
+  },
+  {
+    "question": "¿Qué concepto en redes se refiere a la dirección única de un dispositivo?",
+    "options": [
+      "DNS",
+      "MAC Address",
+      "IP Address",
+      "Gateway"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Redes"
+  }
+]

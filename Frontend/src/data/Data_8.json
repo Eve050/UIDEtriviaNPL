@@ -1,0 +1,242 @@
+[
+  {
+    "question": "¿Qué protocolo de red utiliza el puerto 443 por defecto?",
+    "options": [
+      "HTTP",
+      "FTP",
+      "HTTPS",
+      "SSH"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Cuál de estos lenguajes es principalmente utilizado para desarrollo backend?",
+    "options": [
+      "HTML",
+      "CSS",
+      "Python",
+      "JavaScript"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Programación"
+  },
+  {
+    "question": "¿Qué significa la sigla 'API' en desarrollo de software?",
+    "options": [
+      "Application Programming Interface",
+      "Advanced Programming Interface",
+      "Automated Programming Interface",
+      "Application Process Integration"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Desarrollo"
+  },
+  {
+    "question": "¿Qué tipo de ataque cibernético implica el envío masivo de correos electrónicos no deseados?",
+    "options": [
+      "Phishing",
+      "Spam",
+      "Malware",
+      "DDoS"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Seguridad"
+  },
+  {
+    "question": "¿Cuál es la función principal de un sistema operativo?",
+    "options": [
+      "Gestionar hardware y software",
+      "Crear documentos",
+      "Navegar en internet",
+      "Ejecutar juegos"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Sistemas Operativos"
+  },
+  {
+    "question": "¿Qué base de datos es conocida por su modelo de documentos y flexibilidad?",
+    "options": [
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Oracle"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Bases de Datos"
+  },
+  {
+    "question": "¿Qué tecnología permite ejecutar múltiples sistemas operativos en una sola máquina física?",
+    "options": [
+      "Virtualización",
+      "Cloud Computing",
+      "Contenedores",
+      "Clustering"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Infraestructura"
+  },
+  {
+    "question": "¿Qué lenguaje de programación fue creado por Guido van Rossum?",
+    "options": [
+      "Java",
+      "C++",
+      "Python",
+      "Ruby"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Programación"
+  },
+  {
+    "question": "¿Qué protocolo se utiliza para asignar direcciones IP automáticamente en una red?",
+    "options": [
+      "DNS",
+      "DHCP",
+      "FTP",
+      "HTTP"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Qué herramienta de control de versiones es ampliamente utilizada en desarrollo de software?",
+    "options": [
+      "Git",
+      "SVN",
+      "Mercurial",
+      "CVS"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Desarrollo"
+  },
+  {
+    "question": "¿Qué tipo de malware se propaga replicándose a sí mismo sin intervención del usuario?",
+    "options": [
+      "Virus",
+      "Gusano",
+      "Troyano",
+      "Spyware"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Seguridad"
+  },
+  {
+    "question": "¿Qué sistema operativo es de código abierto y basado en el kernel Linux?",
+    "options": [
+      "Windows",
+      "macOS",
+      "Ubuntu",
+      "iOS"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Sistemas Operativos"
+  },
+  {
+    "question": "¿Qué lenguaje de consulta se utiliza para interactuar con bases de datos relacionales?",
+    "options": [
+      "SQL",
+      "NoSQL",
+      "JSON",
+      "XML"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Bases de Datos"
+  },
+  {
+    "question": "¿Qué servicio en la nube ofrece Amazon Web Services (AWS) para almacenamiento de objetos?",
+    "options": [
+      "EC2",
+      "S3",
+      "Lambda",
+      "RDS"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Cloud Computing"
+  },
+  {
+    "question": "¿Qué framework de JavaScript es conocido por su arquitectura basada en componentes?",
+    "options": [
+      "Angular",
+      "React",
+      "Vue.js",
+      "jQuery"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Desarrollo Web"
+  },
+  {
+    "question": "¿Qué protocolo de correo electrónico permite descargar mensajes desde un servidor?",
+    "options": [
+      "SMTP",
+      "POP3",
+      "IMAP",
+      "HTTP"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Qué tecnología se utiliza para crear aplicaciones móviles multiplataforma?",
+    "options": [
+      "React Native",
+      "Swift",
+      "Kotlin",
+      "Objective-C"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Desarrollo Móvil"
+  },
+  {
+    "question": "¿Qué tipo de prueba de software verifica que el código funcione correctamente en conjunto?",
+    "options": [
+      "Prueba unitaria",
+      "Prueba de integración",
+      "Prueba de sistema",
+      "Prueba de aceptación"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Calidad de Software"
+  },
+  {
+    "question": "¿Qué herramienta se utiliza para automatizar tareas de construcción y despliegue en desarrollo?",
+    "options": [
+      "Jenkins",
+      "Docker",
+      "Kubernetes",
+      "Ansible"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "DevOps"
+  },
+  {
+    "question": "¿Qué lenguaje de programación es comúnmente utilizado para inteligencia artificial y aprendizaje automático?",
+    "options": [
+      "Python",
+      "C#",
+      "PHP",
+      "Go"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "IA y ML"
+  }
+]

@@ -1,0 +1,242 @@
+[
+  {
+    "question": "¿Qué protocolo de red utiliza el puerto 443 por defecto?",
+    "options": [
+      "HTTP",
+      "FTP",
+      "HTTPS",
+      "SSH"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Cuál de estos lenguajes es principalmente utilizado para desarrollo backend?",
+    "options": [
+      "HTML",
+      "CSS",
+      "Python",
+      "JavaScript"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Programación"
+  },
+  {
+    "question": "¿Qué significa la sigla 'API' en desarrollo de software?",
+    "options": [
+      "Application Programming Interface",
+      "Advanced Programming Interface",
+      "Automated Programming Interface",
+      "Application Process Integration"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Desarrollo"
+  },
+  {
+    "question": "¿Qué tipo de ataque cibernético implica el envío masivo de correos no deseados?",
+    "options": [
+      "Phishing",
+      "Spam",
+      "Malware",
+      "DDoS"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Seguridad"
+  },
+  {
+    "question": "¿Qué base de datos es conocida por ser NoSQL y orientada a documentos?",
+    "options": [
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Oracle"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Bases de Datos"
+  },
+  {
+    "question": "¿Qué herramienta se utiliza comúnmente para control de versiones en desarrollo colaborativo?",
+    "options": [
+      "Git",
+      "Docker",
+      "Kubernetes",
+      "Jenkins"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Herramientas"
+  },
+  {
+    "question": "¿Qué tecnología permite ejecutar múltiples sistemas operativos en una sola máquina física?",
+    "options": [
+      "Virtualización",
+      "Cloud Computing",
+      "Containerización",
+      "Clustering"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Infraestructura"
+  },
+  {
+    "question": "¿Qué lenguaje de programación fue creado por Guido van Rossum?",
+    "options": [
+      "Java",
+      "C++",
+      "Python",
+      "Ruby"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Programación"
+  },
+  {
+    "question": "¿Qué protocolo se utiliza para asignar direcciones IP automáticamente en una red?",
+    "options": [
+      "DNS",
+      "DHCP",
+      "FTP",
+      "SMTP"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Qué tipo de prueba de software verifica que el código cumple con los requisitos especificados?",
+    "options": [
+      "Prueba de unidad",
+      "Prueba de integración",
+      "Prueba de aceptación",
+      "Prueba de rendimiento"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Testing"
+  },
+  {
+    "question": "¿Qué sistema operativo es de código abierto y basado en el kernel Linux?",
+    "options": [
+      "Windows",
+      "macOS",
+      "Ubuntu",
+      "iOS"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Sistemas Operativos"
+  },
+  {
+    "question": "¿Qué tecnología se utiliza para crear aplicaciones web interactivas del lado del cliente?",
+    "options": [
+      "Node.js",
+      "React",
+      "Django",
+      "Spring"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Desarrollo Web"
+  },
+  {
+    "question": "¿Qué tipo de almacenamiento en la nube ofrece Amazon Web Services?",
+    "options": [
+      "Google Drive",
+      "Dropbox",
+      "S3",
+      "OneDrive"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Cloud"
+  },
+  {
+    "question": "¿Qué lenguaje se utiliza principalmente para estilizar páginas web?",
+    "options": [
+      "HTML",
+      "JavaScript",
+      "CSS",
+      "PHP"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Desarrollo Web"
+  },
+  {
+    "question": "¿Qué herramienta de automatización se usa comúnmente para CI/CD?",
+    "options": [
+      "Git",
+      "Docker",
+      "Jenkins",
+      "Kubernetes"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "DevOps"
+  },
+  {
+    "question": "¿Qué tipo de base de datos utiliza el modelo relacional?",
+    "options": [
+      "MongoDB",
+      "Redis",
+      "MySQL",
+      "Cassandra"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Bases de Datos"
+  },
+  {
+    "question": "¿Qué protocolo se utiliza para enviar correos electrónicos?",
+    "options": [
+      "HTTP",
+      "FTP",
+      "SMTP",
+      "SSH"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Qué framework de JavaScript es desarrollado por Facebook?",
+    "options": [
+      "Angular",
+      "Vue.js",
+      "React",
+      "Ember.js"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Desarrollo Web"
+  },
+  {
+    "question": "¿Qué tecnología se utiliza para empaquetar aplicaciones y sus dependencias en contenedores?",
+    "options": [
+      "VirtualBox",
+      "Docker",
+      "VMware",
+      "Hyper-V"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Containerización"
+  },
+  {
+    "question": "¿Qué lenguaje de programación es conocido por su uso en desarrollo de aplicaciones móviles para Android?",
+    "options": [
+      "Swift",
+      "Kotlin",
+      "Objective-C",
+      "C#"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Desarrollo Móvil"
+  }
+]

@@ -2,17 +2,17 @@ const DEEPSEEK_API_KEY = "sk-c76f7a44fd974f04ad7593aa6777f170";
 
 export const generateQuizData = async (preguntasExistentes = []) => {
   const temas = [
-    "Informática Básica (Hardware/Software)",
-    "Programación (Lógicas y lenguajes)",
-    "Desarrollo de Software",
-    "Bases de Datos (SQL/NoSQL)",
-    "Redes de Computadoras",
-    "Seguridad Informática",
-    "Sistemas Operativos (Linux/Windows)",
-    "Computación en la Nube",
-    "Ingeniería de Software",
-    "Inteligencia Artificial",
-    "Ciencia de Datos"
+    "Soporte Técnico (Partes de la PC y Mantenimiento).",
+    "Lógica y Algoritmos (Aprende a pensar como programador).",
+    "Creación de Aplicaciones y Apps.",
+    "Organización de Datos (Excel y Tablas).",
+    "Cómo funciona el Internet y el Wi-Fi.",
+    "Protección de Datos y Redes Sociales (Ciberseguridad).",
+    "Manejo de Windows y Linux.",
+    "Uso de Drive, iCloud y la Nube.",
+    "Cómo se crean los grandes proyectos digitales.",
+    "Chatbots y Generación de Imágenes (IA).",
+    "Análisis de Información y Estadísticas"
     ];
   
   // Lista negra para el prompt
@@ -22,7 +22,13 @@ export const generateQuizData = async (preguntasExistentes = []) => {
 
   const prompt = `Genera un JSON con 20 preguntas nuevas de TI. 
   ${listaNegra}
-  Formato JSON: {"questions": [{"question": "...", "options": ["...", "...", "...", "..."], "correct": 0, "prize": 100, "category": "..."}]}`;
+  Formato JSON: {"questions": [{
+                  "question": "...", 
+                  "options": ["...", "...", "...", "..."], 
+                  "correct": 0, 
+                  "prize": 100, 
+                  "category": "..."}
+                  ]}`;
 
   try {
     const response = await fetch("https://api.deepseek.com/v1/chat/completions", {

@@ -1,0 +1,242 @@
+[
+  {
+    "question": "¿Qué protocolo de red utiliza el puerto 443 por defecto para conexiones seguras?",
+    "options": [
+      "HTTP",
+      "FTP",
+      "HTTPS",
+      "SSH"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Cuál de estos lenguajes de programación es principalmente interpretado y no compilado?",
+    "options": [
+      "C++",
+      "Python",
+      "Java",
+      "Rust"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Programación"
+  },
+  {
+    "question": "¿Qué tipo de ataque cibernético implica engañar a un usuario para que revele información confidencial?",
+    "options": [
+      "DDoS",
+      "Phishing",
+      "Malware",
+      "Ransomware"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Seguridad"
+  },
+  {
+    "question": "¿Qué base de datos NoSQL es conocida por su uso en aplicaciones de big data y análisis en tiempo real?",
+    "options": [
+      "MySQL",
+      "MongoDB",
+      "PostgreSQL",
+      "SQLite"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Bases de Datos"
+  },
+  {
+    "question": "¿Qué tecnología permite ejecutar múltiples sistemas operativos en una sola máquina física?",
+    "options": [
+      "Contenedores",
+      "Virtualización",
+      "Cloud Computing",
+      "Clustering"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Infraestructura"
+  },
+  {
+    "question": "¿Qué lenguaje de marcado se utiliza principalmente para estructurar contenido en la web?",
+    "options": [
+      "CSS",
+      "JavaScript",
+      "HTML",
+      "XML"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Desarrollo Web"
+  },
+  {
+    "question": "¿Qué herramienta de control de versiones es ampliamente utilizada en desarrollo de software?",
+    "options": [
+      "SVN",
+      "Git",
+      "Mercurial",
+      "CVS"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Herramientas"
+  },
+  {
+    "question": "¿Qué tipo de inteligencia artificial se enfoca en entrenar modelos con datos etiquetados?",
+    "options": [
+      "Aprendizaje no supervisado",
+      "Aprendizaje supervisado",
+      "Aprendizaje por refuerzo",
+      "Redes neuronales"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "IA"
+  },
+  {
+    "question": "¿Qué protocolo se utiliza para asignar direcciones IP automáticamente en una red?",
+    "options": [
+      "DNS",
+      "DHCP",
+      "TCP",
+      "UDP"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Qué paradigma de programación se basa en objetos que contienen datos y métodos?",
+    "options": [
+      "Funcional",
+      "Orientado a objetos",
+      "Procedural",
+      "Lógico"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Programación"
+  },
+  {
+    "question": "¿Qué tipo de cifrado utiliza la misma clave para cifrar y descifrar datos?",
+    "options": [
+      "Asimétrico",
+      "Simétrico",
+      "Hash",
+      "SSL"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Seguridad"
+  },
+  {
+    "question": "¿Qué servicio en la nube de Amazon ofrece almacenamiento escalable de objetos?",
+    "options": [
+      "EC2",
+      "S3",
+      "RDS",
+      "Lambda"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Cloud"
+  },
+  {
+    "question": "¿Qué lenguaje de consulta se utiliza para interactuar con bases de datos relacionales?",
+    "options": [
+      "NoSQL",
+      "SQL",
+      "GraphQL",
+      "MongoDB Query"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Bases de Datos"
+  },
+  {
+    "question": "¿Qué tecnología permite la comunicación entre diferentes servicios en una arquitectura de microservicios?",
+    "options": [
+      "API REST",
+      "SOAP",
+      "gRPC",
+      "WebSockets"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Arquitectura"
+  },
+  {
+    "question": "¿Qué sistema operativo es de código abierto y basado en el kernel Linux?",
+    "options": [
+      "Windows",
+      "macOS",
+      "Ubuntu",
+      "iOS"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Sistemas Operativos"
+  },
+  {
+    "question": "¿Qué herramienta se utiliza para automatizar el despliegue y gestión de aplicaciones en contenedores?",
+    "options": [
+      "Docker",
+      "Kubernetes",
+      "Jenkins",
+      "Ansible"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "DevOps"
+  },
+  {
+    "question": "¿Qué tipo de prueba de software verifica que el código funcione correctamente en conjunto?",
+    "options": [
+      "Prueba unitaria",
+      "Prueba de integración",
+      "Prueba de sistema",
+      "Prueba de aceptación"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Testing"
+  },
+  {
+    "question": "¿Qué protocolo de correo electrónico permite descargar mensajes desde un servidor a un cliente?",
+    "options": [
+      "SMTP",
+      "IMAP",
+      "POP3",
+      "HTTP"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Qué framework de JavaScript es conocido por su enfoque en componentes reutilizables?",
+    "options": [
+      "Angular",
+      "React",
+      "Vue.js",
+      "jQuery"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Desarrollo Web"
+  },
+  {
+    "question": "¿Qué tipo de almacenamiento en la nube ofrece acceso rápido y de baja latencia para datos frecuentemente accedidos?",
+    "options": [
+      "Almacenamiento en frío",
+      "Almacenamiento en caliente",
+      "Almacenamiento de archivos",
+      "Almacenamiento de bloques"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Cloud"
+  }
+]

@@ -1,0 +1,242 @@
+[
+  {
+    "question": "¿Qué protocolo de red se utiliza comúnmente para la transmisión segura de datos en la web?",
+    "options": [
+      "HTTP",
+      "FTP",
+      "HTTPS",
+      "SMTP"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Cuál de las siguientes es una base de datos NoSQL?",
+    "options": [
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Oracle"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Bases de Datos"
+  },
+  {
+    "question": "¿Qué lenguaje de programación es conocido por su uso en desarrollo web del lado del cliente?",
+    "options": [
+      "Python",
+      "Java",
+      "JavaScript",
+      "C++"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Programación"
+  },
+  {
+    "question": "¿Qué significa la sigla 'API' en el contexto de desarrollo de software?",
+    "options": [
+      "Application Programming Interface",
+      "Advanced Programming Interface",
+      "Automated Programming Interface",
+      "Application Process Integration"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Desarrollo de Software"
+  },
+  {
+    "question": "¿Cuál de estos es un sistema operativo de código abierto?",
+    "options": [
+      "Windows",
+      "macOS",
+      "Linux",
+      "iOS"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Sistemas Operativos"
+  },
+  {
+    "question": "¿Qué tecnología se utiliza para crear aplicaciones móviles híbridas?",
+    "options": [
+      "React Native",
+      "Swift",
+      "Kotlin",
+      "C#"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Desarrollo Móvil"
+  },
+  {
+    "question": "¿Qué tipo de ataque cibernético implica engañar a los usuarios para que revelen información confidencial?",
+    "options": [
+      "DDoS",
+      "Phishing",
+      "Malware",
+      "Ransomware"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Ciberseguridad"
+  },
+  {
+    "question": "¿Qué estructura de datos funciona con el principio 'último en entrar, primero en salir'?",
+    "options": [
+      "Cola",
+      "Pila",
+      "Lista Enlazada",
+      "Árbol"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Estructuras de Datos"
+  },
+  {
+    "question": "¿Qué herramienta se utiliza comúnmente para el control de versiones en desarrollo de software?",
+    "options": [
+      "Docker",
+      "Git",
+      "Jenkins",
+      "Kubernetes"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "DevOps"
+  },
+  {
+    "question": "¿Qué protocolo se utiliza para asignar direcciones IP dinámicamente en una red?",
+    "options": [
+      "DNS",
+      "DHCP",
+      "TCP",
+      "UDP"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Cuál de estos es un framework de JavaScript para construir interfaces de usuario?",
+    "options": [
+      "Django",
+      "Spring",
+      "React",
+      "Laravel"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Desarrollo Web"
+  },
+  {
+    "question": "¿Qué tipo de prueba de software se centra en verificar la funcionalidad de un sistema?",
+    "options": [
+      "Prueba de Carga",
+      "Prueba de Unidad",
+      "Prueba de Integración",
+      "Prueba de Aceptación"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Testing"
+  },
+  {
+    "question": "¿Qué lenguaje es comúnmente usado para consultas en bases de datos relacionales?",
+    "options": [
+      "Python",
+      "SQL",
+      "HTML",
+      "CSS"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Bases de Datos"
+  },
+  {
+    "question": "¿Qué tecnología permite la virtualización de sistemas operativos en un solo hardware?",
+    "options": [
+      "Contenedores",
+      "Hypervisor",
+      "Cloud Computing",
+      "Big Data"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Virtualización"
+  },
+  {
+    "question": "¿Qué patrón de diseño se utiliza para crear objetos sin especificar la clase exacta?",
+    "options": [
+      "Singleton",
+      "Factory",
+      "Observer",
+      "Decorator"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Diseño de Software"
+  },
+  {
+    "question": "¿Qué protocolo de correo electrónico se utiliza para recibir mensajes?",
+    "options": [
+      "SMTP",
+      "POP3",
+      "IMAP",
+      "HTTP"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Qué herramienta se usa para automatizar el despliegue de aplicaciones en la nube?",
+    "options": [
+      "Terraform",
+      "Ansible",
+      "Chef",
+      "Puppet"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "DevOps"
+  },
+  {
+    "question": "¿Qué tipo de inteligencia artificial se enfoca en el reconocimiento de patrones en datos?",
+    "options": [
+      "Machine Learning",
+      "Robótica",
+      "Procesamiento de Lenguaje Natural",
+      "Visión por Computadora"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Inteligencia Artificial"
+  },
+  {
+    "question": "¿Qué estructura de red conecta dispositivos en un área geográfica limitada, como una oficina?",
+    "options": [
+      "WAN",
+      "LAN",
+      "MAN",
+      "VPN"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Qué lenguaje de programación es conocido por su sintaxis simple y legibilidad?",
+    "options": [
+      "C",
+      "Java",
+      "Python",
+      "Assembly"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Programación"
+  }
+]

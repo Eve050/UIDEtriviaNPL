@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-// Importación de los 5 archivos JSON (Base de Datos Local)
-import d1 from "./data/1.json"; 
-import d2 from "./data/2.json"; 
-import d3 from "./data/3.json"; 
-import d4 from "./data/4.json"; 
-import d5 from "./data/5.json"; 
+// Importación de los 7 archivos JSON (Base de Datos Local)
+import d1 from "./data/Data_1.json"; 
+import d2 from "./data/Data_2.json"; 
+import d3 from "./data/Data_3.json"; 
+import d4 from "./data/Data_4.json"; 
+import d5 from "./data/Data_5.json"; 
+import d6 from "./data/Data_6.json"; 
+import d7 from "./data/Data_7.json"; 
+import d8 from "./data/Data_8.json"; 
 
 // Importación de Componentes
 import MainMenu from "./components/MainMenu.jsx";
@@ -13,6 +16,9 @@ import Game from "./components/Game.jsx";
 import Scoreboard from "./components/Scoreboard.jsx";
 import Settings from "./components/Settings.jsx";
 
+// Importación del servicio de IA
+import { generateQuizData } from "./services/aiService";
+
 function App() {
   // Estados de navegación y configuración
   const [view, setView] = useState('menu');
@@ -20,24 +26,21 @@ function App() {
   const [questions, setQuestions] = useState([]);
   const [wildcardActive, setWildcardActive] = useState(true);
   const [difficultyTime, setDifficultyTime] = useState(30);
+  const [isGenerating, setIsGenerating] = useState(false); // Estado para feedback de carga
 
   // ESCALA DE PREMIOS ACTUALIZADA (10 Niveles hasta el Millón)
   const escalaPremios = [100, 500, 1000, 5000, 15000, 50000, 100000, 250000, 500000, 1000000];
 
   /**
    * Prepara el banco de preguntas para una nueva partida
-   * Une los 5 JSON, limpia duplicados y asigna la escala de premios.
    */
   const prepareGame = () => {
-    // 1. Unir todos los datos
-    const allData = [...d1, ...d2, ...d3, ...d4, ...d5];
+    const allData = [...d1, ...d2, ...d3, ...d4, ...d5, ...d6, ...d7, ...d8];
     
-    // 2. Filtrar preguntas de "inicialización" y limpiar espacios
     const filtered = allData.filter(q => 
       q.question && !q.question.toLowerCase().includes("inicialización")
     );
 
-    // 3. Eliminar duplicados exactos usando un Map (por texto de pregunta)
     const uniqueMap = new Map();
     filtered.forEach(q => {
       const key = q.question.trim().toLowerCase();
@@ -47,11 +50,9 @@ function App() {
     });
     const uniqueQuestions = Array.from(uniqueMap.values());
 
-    // 4. Barajar y seleccionar 10 preguntas
     const shuffled = uniqueQuestions.sort(() => 0.5 - Math.random());
     const selection = shuffled.slice(0, 10);
 
-    // 5. Inyectar la escala de premios correcta (del 100 al 1.000.000)
     const finalQuestions = selection.map((q, index) => ({
       ...q,
       prize: escalaPremios[index]
@@ -60,7 +61,45 @@ function App() {
     setQuestions(finalQuestions);
   };
 
-  // Cada vez que la vista cambie a 'game', preparamos preguntas nuevas
+  /**
+   * Lógica para generar preguntas con IA y descargar el archivo JSON
+   */
+  const handleGenerateBank = async () => {
+    setIsGenerating(true);
+    try {
+      // Obtenemos textos de preguntas actuales para que la IA intente no repetirlas
+      const existingTexts = questions.map(q => q.question);
+      
+      const data = await generateQuizData(existingTexts);
+      
+      if (data && data.questions && data.questions.length > 0) {
+        // Formateamos el JSON para que sea legible
+        const jsonString = JSON.stringify(data.questions, null, 2);
+        
+        // Crear un link invisible para forzar la descarga
+        const blob = new Blob([jsonString], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        
+        link.href = url;
+        link.download = `preguntas_ia_${Date.now()}.json`;
+        document.body.appendChild(link);
+        link.click();
+        
+        // Limpieza de memoria y elementos
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+        
+        alert("¡Archivo JSON generado y descargado con éxito!");
+      }
+    } catch (error) {
+      console.error("Error al generar banco:", error);
+      alert("Error: " + error.message);
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
   useEffect(() => {
     if (view === 'game') {
       prepareGame();
@@ -68,27 +107,32 @@ function App() {
   }, [view]);
 
   /**
-   * Guarda el puntaje en LocalStorage y mantiene solo el Top 10
+   * Guarda el puntaje en LocalStorage
    */
   const saveScore = (name, score) => {
     const saved = JSON.parse(localStorage.getItem('scores') || '[]');
     const newEntry = { 
       name: name || "Anónimo", 
       score: score, 
-      date: new Date().toLocaleDateString() 
+      date: new Date().toLocaleString() // Guardamos fecha y hora
     };
     
-    const updatedScores = [...saved, newEntry]
-      .sort((a, b) => b.score - a.score) // Ordenar de mayor a menor
-      .slice(0, 10); // Mantener solo los 10 mejores
+    // Guardamos todos los registros ordenados por puntaje
+    const updatedScores = [...saved, newEntry].sort((a, b) => b.score - a.score);
       
     localStorage.setItem('scores', JSON.stringify(updatedScores));
   };
 
+  const clearScores = () => {
+    if (window.confirm("¿Estás seguro de que quieres borrar todo el historial de puntuaciones?")) {
+      localStorage.removeItem('scores');
+      // Forzamos un re-render o alerta si es necesario
+      alert("Historial borrado.");
+    }
+  };
+
   return (
     <div className="app-container">
-      {/* RENDERIZADO CONDICIONAL DE VISTAS */}
-      
       {view === 'menu' && (
         <MainMenu setView={setView} />
       )}
@@ -112,7 +156,10 @@ function App() {
       )}
 
       {view === 'scores' && (
-        <Scoreboard setView={setView} />
+        <Scoreboard 
+          setView={setView} 
+          clearScores={clearScores} // Pasamos la nueva función
+        />
       )}
 
       {view === 'settings' && (
@@ -122,7 +169,15 @@ function App() {
           setWildcardActive={setWildcardActive} 
           difficultyTime={difficultyTime} 
           setDifficultyTime={setDifficultyTime} 
+          onGenerateBank={handleGenerateBank} // Pasamos la función al componente
         />
+      )}
+
+      {/* Overlay opcional de carga para la IA */}
+      {isGenerating && (
+        <div className="loading-overlay">
+          <p>Generando nuevas preguntas con IA...</p>
+        </div>
       )}
     </div>
   );
