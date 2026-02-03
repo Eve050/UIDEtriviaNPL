@@ -27,8 +27,8 @@
     "question": "¿Qué significa la sigla 'API' en desarrollo de software?",
     "options": [
       "Application Programming Interface",
-      "Advanced Programming Interface",
-      "Automated Programming Interface",
+      "Advanced Programming Integration",
+      "Automated Process Interface",
       "Application Process Integration"
     ],
     "correct": 0,
@@ -36,12 +36,12 @@
     "category": "Desarrollo"
   },
   {
-    "question": "¿Qué tipo de ataque consiste en enviar datos maliciosos a una aplicación web?",
+    "question": "¿Qué tipo de ataque consiste en inyectar código SQL malicioso?",
     "options": [
       "Phishing",
       "DDoS",
       "SQL Injection",
-      "Man-in-the-Middle"
+      "Man-in-the-middle"
     ],
     "correct": 2,
     "prize": 100,
@@ -86,38 +86,26 @@
   {
     "question": "¿Qué lenguaje de programación fue creado por Guido van Rossum?",
     "options": [
-      "Ruby",
+      "Java",
       "Python",
-      "PHP",
-      "Perl"
+      "Ruby",
+      "C#"
     ],
     "correct": 1,
     "prize": 100,
     "category": "Programación"
   },
   {
-    "question": "¿Qué tecnología permite ejecutar múltiples sistemas operativos en una sola máquina física?",
+    "question": "¿Qué significa 'IoT' en el contexto tecnológico?",
     "options": [
-      "Virtualización",
-      "Contenedores",
-      "Cloud Computing",
-      "Clustering"
+      "Internet of Things",
+      "Integration of Technology",
+      "Internet Operations Team",
+      "Input/Output Transfer"
     ],
     "correct": 0,
     "prize": 100,
-    "category": "Infraestructura"
-  },
-  {
-    "question": "¿Qué tipo de prueba verifica que los componentes de software funcionen juntos correctamente?",
-    "options": [
-      "Prueba unitaria",
-      "Prueba de integración",
-      "Prueba de sistema",
-      "Prueba de aceptación"
-    ],
-    "correct": 1,
-    "prize": 100,
-    "category": "Testing"
+    "category": "Tecnologías Emergentes"
   },
   {
     "question": "¿Qué sistema operativo es de código abierto y basado en Linux?",
@@ -132,40 +120,52 @@
     "category": "Sistemas Operativos"
   },
   {
+    "question": "¿Qué estructura de datos funciona bajo el principio LIFO?",
+    "options": [
+      "Cola",
+      "Lista",
+      "Pila",
+      "Árbol"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Algoritmos"
+  },
+  {
+    "question": "¿Qué tecnología permite ejecutar múltiples sistemas operativos en una sola máquina física?",
+    "options": [
+      "Virtualización",
+      "Cloud Computing",
+      "Containerización",
+      "Clustering"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Infraestructura"
+  },
+  {
     "question": "¿Qué lenguaje se utiliza principalmente para estilizar páginas web?",
     "options": [
       "HTML",
       "CSS",
       "JavaScript",
-      "XML"
+      "PHP"
     ],
     "correct": 1,
     "prize": 100,
     "category": "Desarrollo Web"
   },
   {
-    "question": "¿Qué tipo de almacenamiento en la nube ofrece Amazon Web Services?",
+    "question": "¿Qué protocolo se utiliza para asignar direcciones IP automáticamente en una red?",
     "options": [
-      "Google Drive",
-      "Dropbox",
-      "S3",
-      "OneDrive"
+      "DNS",
+      "DHCP",
+      "TCP",
+      "UDP"
     ],
-    "correct": 2,
+    "correct": 1,
     "prize": 100,
-    "category": "Cloud"
-  },
-  {
-    "question": "¿Qué algoritmo de encriptación es ampliamente utilizado para seguridad web?",
-    "options": [
-      "AES",
-      "MD5",
-      "SHA-1",
-      "RSA"
-    ],
-    "correct": 3,
-    "prize": 100,
-    "category": "Seguridad"
+    "category": "Redes"
   },
   {
     "question": "¿Qué framework de JavaScript es desarrollado por Facebook?",
@@ -173,69 +173,69 @@
       "Angular",
       "Vue.js",
       "React",
-      "Ember.js"
+      "Ember"
     ],
     "correct": 2,
     "prize": 100,
     "category": "Frameworks"
   },
   {
-    "question": "¿Qué tipo de base de datos utiliza tablas para almacenar datos?",
+    "question": "¿Qué tipo de prueba verifica que las unidades individuales de código funcionen correctamente?",
     "options": [
-      "Documental",
-      "Gráfica",
-      "Relacional",
-      "Clave-Valor"
+      "Prueba de integración",
+      "Prueba de sistema",
+      "Prueba unitaria",
+      "Prueba de aceptación"
     ],
     "correct": 2,
+    "prize": 100,
+    "category": "Testing"
+  },
+  {
+    "question": "¿Qué base de datos relacional es desarrollada por Microsoft?",
+    "options": [
+      "MySQL",
+      "SQLite",
+      "PostgreSQL",
+      "SQL Server"
+    ],
+    "correct": 3,
     "prize": 100,
     "category": "Bases de Datos"
   },
   {
-    "question": "¿Qué herramienta se usa para automatizar el despliegue de aplicaciones?",
+    "question": "¿Qué herramienta se utiliza para automatizar el despliegue de aplicaciones en contenedores?",
     "options": [
       "Git",
       "Docker",
-      "Jenkins",
-      "Kubernetes"
+      "Kubernetes",
+      "Jenkins"
     ],
     "correct": 2,
     "prize": 100,
     "category": "DevOps"
   },
   {
-    "question": "¿Qué protocolo se utiliza para resolver nombres de dominio a direcciones IP?",
-    "options": [
-      "HTTP",
-      "DNS",
-      "FTP",
-      "TCP"
-    ],
-    "correct": 1,
-    "prize": 100,
-    "category": "Redes"
-  },
-  {
     "question": "¿Qué lenguaje de programación es conocido por su uso en ciencia de datos y machine learning?",
     "options": [
       "Java",
-      "C#",
+      "C++",
       "Python",
-      "Swift"
+      "Ruby"
     ],
     "correct": 2,
     "prize": 100,
-    "category": "Programación"
+    "category": "Ciencia de Datos"
   },
   {
-    "question": "¿Qué tipo de ataque busca engañar a los usuarios para que revelen información confidencial?",
+    "question": "¿Qué protocolo seguro se utiliza para acceder y gestionar servidores de forma remota?",
     "options": [
-      "Malware",
-      "Phishing",
-      "Ransomware",
-      "Spyware"
+      "HTTP",
+      "FTP",
+      "SSH",
+      "Telnet"
     ],
-    "correct": 1,
+    "correct": 2,
     "prize": 100,
     "category": "Seguridad"
   }

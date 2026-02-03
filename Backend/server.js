@@ -70,6 +70,43 @@ app.post('/api/save-questions', (req, res) => {
 });
 
 /**
+ * Endpoint para obtener TODAS las preguntas de todos los JSON en /data
+ * GET /api/all-questions
+ */
+app.get('/api/all-questions', (req, res) => {
+  try {
+    const allQuestions = [];
+    const files = fs.readdirSync(dataDir).filter(file => file.endsWith('.json'));
+
+    files.forEach(file => {
+      try {
+        const filePath = path.join(dataDir, file);
+        const content = fs.readFileSync(filePath, 'utf-8');
+        const parsed = JSON.parse(content);
+        
+        // Soporta tanto Array directo como { questions: [...] }
+        const questions = Array.isArray(parsed) ? parsed : (parsed.questions || []);
+        allQuestions.push(...questions);
+      } catch (err) {
+        console.warn(`Error leyendo ${file}:`, err.message);
+      }
+    });
+
+    res.json({
+      success: true,
+      total: allQuestions.length,
+      questions: allQuestions
+    });
+  } catch (error) {
+    console.error('Error al obtener preguntas:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error al obtener preguntas: ' + error.message
+    });
+  }
+});
+
+/**
  * Endpoint para obtener lista de archivos JSON guardados
  * GET /api/saved-files
  */
