@@ -44,14 +44,14 @@ const Settings = ({
         <div className="settings-section">
           <h3>BANCO DE DATOS (IA)</h3>
           <p style={{fontSize: '0.75rem', marginBottom: '10px', color: '#ccc'}}>
-            Genera 20 preguntas con DeepSeek y descárgalas.
+            Genera 20 preguntas con DeepSeek y guárdalas en /data automáticamente.
           </p>
           <button 
             onClick={onGenerateBank} 
             className="btn-save-settings"
             style={{backgroundColor: '#28a745', fontSize: '0.8rem'}}
           >
-            📥 GENERAR Y DESCARGAR JSON
+            ✨ GENERAR Y GUARDAR JSON
           </button>
         </div>
 

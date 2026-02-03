@@ -1,10 +1,4 @@
 import React, { useState, useEffect } from "react";
-// Importación de los 7 archivos JSON (Base de Datos Local)
-import d1 from "./data/Data1.json"; 
-import d2 from "./data/Data2.json"; 
-import d3 from "./data/Data3.json"; 
-import d4 from "./data/Data4.json"; 
-import d5 from "./data/Data5.json"; 
 
 // Importación de Componentes
 import MainMenu from "./components/MainMenu.jsx";
@@ -15,6 +9,8 @@ import Settings from "./components/Settings.jsx";
 
 // Importación del servicio de IA
 import { generateQuizData } from "./services/aiService";
+// Importación del servicio de almacenamiento
+import { saveQuestionsToServer, checkBackendHealth } from "./services/storageService";
 
 function App() {
   // Estados de navegación y configuración
@@ -30,36 +26,52 @@ function App() {
 
   /**
    * Prepara el banco de preguntas para una nueva partida
+   * Carga dinámicamente las preguntas del servidor
    */
-  const prepareGame = () => {
-    const allData = [...d1, ...d2, ...d3, ...d4, ...d5];
-    
-    const filtered = allData.filter(q => 
-      q.question && !q.question.toLowerCase().includes("inicialización")
-    );
+  const prepareGame = async () => {
+    try {
+      // Obtener todas las preguntas del servidor (de la carpeta /data)
+      const response = await fetch('http://localhost:5000/api/all-questions');
+      const result = await response.json();
 
-    const uniqueMap = new Map();
-    filtered.forEach(q => {
-      const key = q.question.trim().toLowerCase();
-      if (!uniqueMap.has(key)) {
-        uniqueMap.set(key, q);
+      if (!result.success || !result.questions || result.questions.length === 0) {
+        console.warn('No hay preguntas disponibles, usando datos por defecto');
+        setQuestions([]);
+        return;
       }
-    });
-    const uniqueQuestions = Array.from(uniqueMap.values());
 
-    const shuffled = uniqueQuestions.sort(() => 0.5 - Math.random());
-    const selection = shuffled.slice(0, 10);
+      const allData = result.questions;
 
-    const finalQuestions = selection.map((q, index) => ({
-      ...q,
-      prize: escalaPremios[index]
-    }));
+      const filtered = allData.filter(q => 
+        q.question && !q.question.toLowerCase().includes("inicialización")
+      );
 
-    setQuestions(finalQuestions);
+      const uniqueMap = new Map();
+      filtered.forEach(q => {
+        const key = q.question.trim().toLowerCase();
+        if (!uniqueMap.has(key)) {
+          uniqueMap.set(key, q);
+        }
+      });
+      const uniqueQuestions = Array.from(uniqueMap.values());
+
+      const shuffled = uniqueQuestions.sort(() => 0.5 - Math.random());
+      const selection = shuffled.slice(0, 10);
+
+      const finalQuestions = selection.map((q, index) => ({
+        ...q,
+        prize: escalaPremios[index]
+      }));
+
+      setQuestions(finalQuestions);
+    } catch (error) {
+      console.error('Error cargando preguntas del servidor:', error);
+      setQuestions([]);
+    }
   };
 
   /**
-   * Lógica para generar preguntas con IA y descargar el archivo JSON
+   * Lógica para generar preguntas con IA y guardar el archivo JSON
    */
   const handleGenerateBank = async () => {
     setIsGenerating(true);
@@ -70,28 +82,29 @@ function App() {
       const data = await generateQuizData(existingTexts);
       
       if (data && data.questions && data.questions.length > 0) {
-        // Formateamos el JSON para que sea legible
-        const jsonString = JSON.stringify(data.questions, null, 2);
-        
-        // Crear un link invisible para forzar la descarga
-        const blob = new Blob([jsonString], { type: "application/json" });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        
-        link.href = url;
-        link.download = `preguntas_ia_${Date.now()}.json`;
-        document.body.appendChild(link);
-        link.click();
-        
-        // Limpieza de memoria y elementos
-        document.body.removeChild(link);
-        URL.revokeObjectURL(url);
-        
-        alert("¡Archivo JSON generado y descargado con éxito!");
+        // Enviamos al backend para que lo guarde en `Frontend/src/data`
+        try {
+          const resp = await fetch('http://localhost:5000/api/save-questions', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ questions: data.questions })
+          });
+
+          const result = await resp.json();
+          if (result.success) {
+            alert(`✅ Preguntas guardadas en: ${result.filename}`);
+          } else {
+            console.error('Error guardando en backend:', result);
+            alert('❌ Error guardando preguntas en el backend. Revisa la consola.');
+          }
+        } catch (postErr) {
+          console.error('Fallo al conectar con backend:', postErr);
+          alert('❌ No se pudo conectar con el backend para guardar las preguntas.\nAsegúrate de que está corriendo en http://localhost:5000');
+        }
       }
     } catch (error) {
       console.error("Error al generar banco:", error);
-      alert("Error: " + error.message);
+      alert("❌ Error: " + error.message);
     } finally {
       setIsGenerating(false);
     }

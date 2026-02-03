@@ -1,0 +1,242 @@
+[
+  {
+    "question": "¿Qué protocolo de red utiliza el puerto 443 por defecto?",
+    "options": [
+      "HTTP",
+      "FTP",
+      "HTTPS",
+      "SSH"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Cuál de estos lenguajes es principalmente utilizado para desarrollo frontend?",
+    "options": [
+      "Python",
+      "Java",
+      "JavaScript",
+      "C++"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Programación"
+  },
+  {
+    "question": "¿Qué significa la sigla 'API' en desarrollo de software?",
+    "options": [
+      "Application Programming Interface",
+      "Advanced Programming Integration",
+      "Automated Process Interface",
+      "Application Process Integration"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Desarrollo"
+  },
+  {
+    "question": "¿Qué tipo de ataque consiste en inyectar código SQL malicioso?",
+    "options": [
+      "Phishing",
+      "DDoS",
+      "SQL Injection",
+      "Man-in-the-middle"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Seguridad"
+  },
+  {
+    "question": "¿Qué base de datos es conocida por ser NoSQL y orientada a documentos?",
+    "options": [
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Oracle"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Bases de Datos"
+  },
+  {
+    "question": "¿Qué herramienta se utiliza comúnmente para control de versiones en desarrollo colaborativo?",
+    "options": [
+      "Docker",
+      "Git",
+      "Jenkins",
+      "Kubernetes"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Herramientas"
+  },
+  {
+    "question": "¿Qué protocolo se utiliza para enviar correos electrónicos?",
+    "options": [
+      "SMTP",
+      "POP3",
+      "IMAP",
+      "FTP"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Qué lenguaje de programación fue creado por Guido van Rossum?",
+    "options": [
+      "Java",
+      "Python",
+      "Ruby",
+      "C#"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Programación"
+  },
+  {
+    "question": "¿Qué significa 'IoT' en el contexto tecnológico?",
+    "options": [
+      "Internet of Things",
+      "Integration of Technology",
+      "Internet Operations Team",
+      "Input/Output Transfer"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Tecnologías Emergentes"
+  },
+  {
+    "question": "¿Qué sistema operativo es de código abierto y basado en Linux?",
+    "options": [
+      "Windows",
+      "macOS",
+      "Ubuntu",
+      "iOS"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Sistemas Operativos"
+  },
+  {
+    "question": "¿Qué estructura de datos funciona bajo el principio LIFO?",
+    "options": [
+      "Cola",
+      "Lista",
+      "Pila",
+      "Árbol"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Algoritmos"
+  },
+  {
+    "question": "¿Qué tecnología permite ejecutar múltiples sistemas operativos en una sola máquina física?",
+    "options": [
+      "Virtualización",
+      "Cloud Computing",
+      "Containerización",
+      "Clustering"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Infraestructura"
+  },
+  {
+    "question": "¿Qué lenguaje se utiliza principalmente para estilizar páginas web?",
+    "options": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "PHP"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Desarrollo Web"
+  },
+  {
+    "question": "¿Qué protocolo se utiliza para asignar direcciones IP automáticamente en una red?",
+    "options": [
+      "DNS",
+      "DHCP",
+      "TCP",
+      "UDP"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Qué framework de JavaScript es desarrollado por Facebook?",
+    "options": [
+      "Angular",
+      "Vue.js",
+      "React",
+      "Ember"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Frameworks"
+  },
+  {
+    "question": "¿Qué tipo de prueba verifica que las unidades individuales de código funcionen correctamente?",
+    "options": [
+      "Prueba de integración",
+      "Prueba de sistema",
+      "Prueba unitaria",
+      "Prueba de aceptación"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Testing"
+  },
+  {
+    "question": "¿Qué base de datos relacional es desarrollada por Microsoft?",
+    "options": [
+      "MySQL",
+      "SQLite",
+      "PostgreSQL",
+      "SQL Server"
+    ],
+    "correct": 3,
+    "prize": 100,
+    "category": "Bases de Datos"
+  },
+  {
+    "question": "¿Qué herramienta se utiliza para automatizar el despliegue de aplicaciones en contenedores?",
+    "options": [
+      "Git",
+      "Docker",
+      "Kubernetes",
+      "Jenkins"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "DevOps"
+  },
+  {
+    "question": "¿Qué lenguaje de programación es conocido por su uso en ciencia de datos y machine learning?",
+    "options": [
+      "Java",
+      "C++",
+      "Python",
+      "Ruby"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Ciencia de Datos"
+  },
+  {
+    "question": "¿Qué protocolo seguro se utiliza para acceder y gestionar servidores de forma remota?",
+    "options": [
+      "HTTP",
+      "FTP",
+      "SSH",
+      "Telnet"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Seguridad"
+  }
+]
