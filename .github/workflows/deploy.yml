@@ -1,42 +1,37 @@
-name: Deploy Frontend and Backend
+name: Deploy to Vercel
 
 on:
   push:
-    branches: [ main ] # Se activa cuando subes cambios a la rama main
+    branches:
+      - main  # Se ejecuta cada vez que subes algo a la rama main
 
 jobs:
-  # Trabajo para el Frontend
-  build-frontend:
+  deploy-frontend:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Deploy Frontend to Vercel
+        uses: amondnet/vercel-action@v20
         with:
-          node-version: '18'
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID_FRONT }} # ID específico del Front
+          working-directory: ./Frontend
+          vercel-args: '--prod'
 
-      - name: Install & Build Frontend
-        run: |
-          cd Frontend
-          npm install
-          npm run build
-        # Aquí añadirías el paso de subida (ej. a S3 o Netlify)
-
-  # Trabajo para el Backend
-  build-backend:
+  deploy-backend:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Setup Node.js (o el lenguaje que uses)
-        uses: actions/setup-node@v4
+      - name: Deploy Backend to Vercel
+        uses: amondnet/vercel-action@v20
         with:
-          node-version: '18'
-
-      - name: Install & Test Backend
-        run: |
-          cd Backend
-          npm install
-          # npm test 
-        # Aquí añadirías el paso de subida (ej. a un VPS o Heroku)
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID_BACK }} # ID específico del Back
+          working-directory: ./Backend
+          vercel-args: '--prod'
