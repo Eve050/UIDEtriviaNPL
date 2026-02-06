@@ -1,4 +1,4 @@
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5001";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "uide-trivia-backend.vercel.app";
 
 /**
  * Guarda las preguntas generadas en el servidor backend
