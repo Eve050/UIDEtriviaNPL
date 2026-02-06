@@ -1,0 +1,242 @@
+[
+  {
+    "question": "¿Qué protocolo de red se utiliza principalmente para asignar direcciones IP dinámicas a dispositivos en una red?",
+    "options": [
+      "FTP",
+      "DHCP",
+      "HTTP",
+      "SMTP"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "En programación, ¿qué estructura de datos sigue el principio LIFO (Last In, First Out)?",
+    "options": [
+      "Cola",
+      "Lista enlazada",
+      "Pila",
+      "Árbol binario"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Programación"
+  },
+  {
+    "question": "¿Qué lenguaje de consulta se utiliza comúnmente para interactuar con bases de datos relacionales?",
+    "options": [
+      "Python",
+      "SQL",
+      "Java",
+      "HTML"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Bases de Datos"
+  },
+  {
+    "question": "¿Qué tipo de ataque cibernético implica engañar a un usuario para que revele información confidencial, como contraseñas?",
+    "options": [
+      "DDoS",
+      "Phishing",
+      "Malware",
+      "Ransomware"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Ciberseguridad"
+  },
+  {
+    "question": "¿Qué sistema operativo de código abierto se basa en el kernel Linux y es ampliamente utilizado en servidores?",
+    "options": [
+      "Windows Server",
+      "Ubuntu",
+      "macOS",
+      "Android"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Sistemas Operativos"
+  },
+  {
+    "question": "En el modelo OSI, ¿qué capa es responsable de la transmisión de bits a través del medio físico?",
+    "options": [
+      "Capa de Red",
+      "Capa de Transporte",
+      "Capa Física",
+      "Capa de Aplicación"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Qué tecnología permite ejecutar múltiples sistemas operativos en una sola máquina física?",
+    "options": [
+      "Contenedores",
+      "Virtualización",
+      "Cloud Computing",
+      "Big Data"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Infraestructura"
+  },
+  {
+    "question": "¿Qué algoritmo de encriptación simétrica es ampliamente utilizado para asegurar comunicaciones en internet?",
+    "options": [
+      "RSA",
+      "AES",
+      "SHA-256",
+      "MD5"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Ciberseguridad"
+  },
+  {
+    "question": "En desarrollo web, ¿qué lenguaje se utiliza principalmente para dar estilo a las páginas HTML?",
+    "options": [
+      "JavaScript",
+      "CSS",
+      "PHP",
+      "Ruby"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Desarrollo Web"
+  },
+  {
+    "question": "¿Qué base de datos NoSQL es conocida por su uso en aplicaciones de big data y análisis en tiempo real?",
+    "options": [
+      "MySQL",
+      "MongoDB",
+      "Oracle",
+      "PostgreSQL"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Bases de Datos"
+  },
+  {
+    "question": "¿Qué herramienta de control de versiones es ampliamente utilizada por desarrolladores para gestionar cambios en el código?",
+    "options": [
+      "Git",
+      "SVN",
+      "Mercurial",
+      "CVS"
+    ],
+    "correct": 0,
+    "prize": 100,
+    "category": "Desarrollo"
+  },
+  {
+    "question": "¿Qué protocolo seguro se utiliza para acceder y administrar servidores de forma remota a través de una red?",
+    "options": [
+      "Telnet",
+      "SSH",
+      "FTP",
+      "HTTP"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "En inteligencia artificial, ¿qué técnica se utiliza para entrenar modelos basados en datos etiquetados?",
+    "options": [
+      "Aprendizaje no supervisado",
+      "Aprendizaje supervisado",
+      "Aprendizaje por refuerzo",
+      "Redes neuronales"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Inteligencia Artificial"
+  },
+  {
+    "question": "¿Qué componente de hardware es responsable de realizar cálculos y ejecutar instrucciones en una computadora?",
+    "options": [
+      "RAM",
+      "CPU",
+      "GPU",
+      "Disco duro"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Hardware"
+  },
+  {
+    "question": "¿Qué framework de JavaScript es popular para construir interfaces de usuario en aplicaciones web de una sola página?",
+    "options": [
+      "Angular",
+      "React",
+      "Vue.js",
+      "jQuery"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Desarrollo Web"
+  },
+  {
+    "question": "¿Qué tipo de prueba de software se centra en verificar que los componentes individuales funcionen correctamente?",
+    "options": [
+      "Prueba de integración",
+      "Prueba unitaria",
+      "Prueba de sistema",
+      "Prueba de aceptación"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Testing"
+  },
+  {
+    "question": "¿Qué servicio en la nube de Amazon proporciona capacidad de computación escalable?",
+    "options": [
+      "S3",
+      "EC2",
+      "RDS",
+      "Lambda"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Cloud Computing"
+  },
+  {
+    "question": "En redes, ¿qué dispositivo se utiliza para conectar múltiples redes y dirigir el tráfico entre ellas?",
+    "options": [
+      "Switch",
+      "Hub",
+      "Router",
+      "Modem"
+    ],
+    "correct": 2,
+    "prize": 100,
+    "category": "Redes"
+  },
+  {
+    "question": "¿Qué paradigma de programación se basa en objetos que contienen datos y métodos?",
+    "options": [
+      "Programación funcional",
+      "Programación orientada a objetos",
+      "Programación procedural",
+      "Programación lógica"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Programación"
+  },
+  {
+    "question": "¿Qué estándar de comunicación inalámbrica se utiliza comúnmente para conectar dispositivos a corta distancia, como auriculares?",
+    "options": [
+      "Wi-Fi",
+      "Bluetooth",
+      "NFC",
+      "Zigbee"
+    ],
+    "correct": 1,
+    "prize": 100,
+    "category": "Tecnologías Inalámbricas"
+  }
+]
