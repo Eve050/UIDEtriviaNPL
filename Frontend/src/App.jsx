@@ -84,7 +84,7 @@ function App() {
       if (data && data.questions && data.questions.length > 0) {
         // Enviamos al backend para que lo guarde en `Frontend/src/data`
         try {
-          const resp = await fetch('https://uide-trivia-backend.vercel.app/api/save-questions', {
+          const resp = await fetch('https://uide-trivia-backend.vercel.app/save-questions', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ questions: data.questions })

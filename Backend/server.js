@@ -1,5 +1,5 @@
-import express from 'express';
-import cors from 'cors';
+const express = require('express');
+const cors = require('cors');
 import bodyParser from 'body-parser';
 import fs from 'fs';
 import path from 'path';
@@ -14,8 +14,8 @@ const PORT = process.env.PORT || 5001;
 // Middleware
 app.use(cors({
   origin: 'https://uide-trivia-front.vercel.app', // Tu URL de Frontend
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type']
 }));
 
 app.use(express.json());
