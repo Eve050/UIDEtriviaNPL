@@ -1,5 +1,5 @@
-const express = require('express');
-const cors = require('cors');
+import express from 'express';
+import cors from 'cors';
 import bodyParser from 'body-parser';
 import fs from 'fs';
 import path from 'path';
@@ -9,16 +9,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors({
-  origin: 'https://uide-trivia-front.vercel.app', // Tu URL de Frontend
-  methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type']
-}));
-
-app.use(express.json());
+app.use(cors());
+app.use(bodyParser.json({ limit: '10mb' }));
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 
 // Crear carpeta /data si no existe
 const dataDir = path.join(__dirname, '..', 'Frontend', 'src', 'data');
@@ -30,16 +26,46 @@ if (!fs.existsSync(dataDir)) {
  * Endpoint para guardar JSON de preguntas generadas por IA
  * POST /api/save-questions
  */
-app.post('/api/save-questions', async (req, res) => {
+app.post('/api/save-questions', (req, res) => {
   try {
-    // 1. Aquí va tu lógica actual para generar preguntas con IA
-    const nuevasPreguntas = await generarPreguntasConIA(); 
+    const { questions, filename } = req.body;
 
-    // 2. EN LUGAR DE USAR fs.writeFile, simplemente envíalas de vuelta
-    res.status(200).json(nuevasPreguntas);
-    
+    if (!questions || !Array.isArray(questions)) {
+      return res.status(400).json({
+        success: false,
+        message: 'El campo "questions" es obligatorio y debe ser un array'
+      });
+    }
+
+    // Generar nombre de archivo si no se proporciona
+    const fileName = filename || `preguntas_ia_${Date.now()}.json`;
+    const filePath = path.join(dataDir, fileName);
+
+    // Validar que el nombre de archivo sea seguro (prevenir directory traversal)
+    const resolvedPath = path.resolve(filePath);
+    if (!resolvedPath.startsWith(path.resolve(dataDir))) {
+      return res.status(400).json({
+        success: false,
+        message: 'Nombre de archivo inválido'
+      });
+    }
+
+    // Guardar el archivo
+    const jsonContent = JSON.stringify(questions, null, 2);
+    fs.writeFileSync(filePath, jsonContent, 'utf-8');
+
+    res.json({
+      success: true,
+      message: 'Archivo guardado correctamente',
+      filename: fileName,
+      path: filePath
+    });
   } catch (error) {
-    res.status(500).json({ error: "No se pudieron generar las preguntas" });
+    console.error('Error al guardar el archivo:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error al guardar el archivo: ' + error.message
+    });
   }
 });
 

@@ -31,7 +31,7 @@ function App() {
   const prepareGame = async () => {
     try {
       // Obtener todas las preguntas del servidor (de la carpeta /data)
-      const response = await fetch('https://uide-trivia-backend.vercel.app/api/all-questions');
+      const response = await fetch('http://localhost:5000/api/all-questions');
       const result = await response.json();
 
       if (!result.success || !result.questions || result.questions.length === 0) {
@@ -84,7 +84,7 @@ function App() {
       if (data && data.questions && data.questions.length > 0) {
         // Enviamos al backend para que lo guarde en `Frontend/src/data`
         try {
-          const resp = await fetch('https://uide-trivia-backend.vercel.app/save-questions', {
+          const resp = await fetch('http://localhost:5000/api/save-questions', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ questions: data.questions })
@@ -99,7 +99,7 @@ function App() {
           }
         } catch (postErr) {
           console.error('Fallo al conectar con backend:', postErr);
-          alert('❌ No se pudo conectar con el backend para guardar las preguntas.\nAsegúrate de que está corriendo en https://uide-trivia-backend.vercel.app/');
+          alert('❌ No se pudo conectar con el backend para guardar las preguntas.\nAsegúrate de que está corriendo en http://localhost:5000');
         }
       }
     } catch (error) {
