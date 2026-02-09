@@ -9,7 +9,7 @@ app.use(express.json());
 
 // Para cargar el JSON de Firebase en ES Modules necesitamos este truco:
 const serviceAccount = JSON.parse(
-  await readFile(new URL('./wond-f8082-firebase-adminsdk-fbsvc-2220a2f20a.json', import.meta.url))
+  await readFile(new URL('./wond.json', import.meta.url))
 );
 
 admin.initializeApp({
