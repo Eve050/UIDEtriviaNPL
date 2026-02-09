@@ -28,7 +28,7 @@ function App() {
   const prepareGame = async () => {
     try {
       // Llamamos al nuevo endpoint de Firebase que creamos en el Backend
-      const response = await fetch('http://localhost:5000/api/get-random-questions');
+      const response = await fetch('https://uid-etrivia-npl-pypb.vercel.app/api/get-random-questions');
       const data = await response.json();
 
       if (!data || data.length === 0) {
@@ -61,7 +61,7 @@ function App() {
       
       if (data && data.questions && data.questions.length > 0) {
         // ENVIAR A FIREBASE (A través del backend)
-        const resp = await fetch('http://localhost:5000/api/save-generated-questions', {
+        const resp = await fetch('https://uid-etrivia-npl-pypb.vercel.app/api/save-generated-questions', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data.questions) // Enviamos el array directamente
