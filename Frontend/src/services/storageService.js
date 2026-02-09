@@ -52,10 +52,23 @@ export const saveQuestionsToServer = async (questions, filename = null) => {
  */
 export const downloadQuestionsLocally = (questions, filename) => {
   try {
-    const jsonString = JSON.stringify(questions, null, 2);
-    const blob = new Blob([jsonString], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
+    const handleSaveToCloud = async (generatedQuestions) => {
+  try {
+    const response = await fetch('http://localhost:3000/api/save-generated-questions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(generatedQuestions), // Tus preguntas generadas
+    });
+
+    if (response.ok) {
+      alert("¡Preguntas guardadas en la nube correctamente!");
+    }
+  } catch (error) {
+    console.error("Error al guardar:", error);
+  }
+};
     
     link.href = url;
     link.download = filename;

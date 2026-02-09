@@ -9,8 +9,6 @@ import Settings from "./components/Settings.jsx";
 
 // Importación del servicio de IA
 import { generateQuizData } from "./services/aiService";
-// Importación del servicio de almacenamiento
-import { saveQuestionsToServer, checkBackendHealth } from "./services/storageService";
 
 function App() {
   // Estados de navegación y configuración
@@ -19,91 +17,65 @@ function App() {
   const [questions, setQuestions] = useState([]);
   const [wildcardActive, setWildcardActive] = useState(true);
   const [difficultyTime, setDifficultyTime] = useState(30);
-  const [isGenerating, setIsGenerating] = useState(false); // Estado para feedback de carga
+  const [isGenerating, setIsGenerating] = useState(false); 
 
-  // ESCALA DE PREMIOS ACTUALIZADA (10 Niveles hasta el Millón)
+  // ESCALA DE PREMIOS ACTUALIZADA
   const escalaPremios = [100, 500, 1000, 5000, 15000, 50000, 100000, 250000, 500000, 1000000];
 
   /**
-   * Prepara el banco de preguntas para una nueva partida
-   * Carga dinámicamente las preguntas del servidor
+   * NUEVA LÓGICA: Obtiene preguntas aleatorias desde Firebase (vía Backend)
    */
   const prepareGame = async () => {
     try {
-      // Obtener todas las preguntas del servidor (de la carpeta /data)
-      const response = await fetch('http://localhost:5000/api/all-questions');
-      const result = await response.json();
+      // Llamamos al nuevo endpoint de Firebase que creamos en el Backend
+      const response = await fetch('http://localhost:5000/api/get-random-questions');
+      const data = await response.json();
 
-      if (!result.success || !result.questions || result.questions.length === 0) {
-        console.warn('No hay preguntas disponibles, usando datos por defecto');
+      if (!data || data.length === 0) {
+        console.warn('No se recibieron preguntas de Firebase');
         setQuestions([]);
         return;
       }
 
-      const allData = result.questions;
-
-      const filtered = allData.filter(q => 
-        q.question && !q.question.toLowerCase().includes("inicialización")
-      );
-
-      const uniqueMap = new Map();
-      filtered.forEach(q => {
-        const key = q.question.trim().toLowerCase();
-        if (!uniqueMap.has(key)) {
-          uniqueMap.set(key, q);
-        }
-      });
-      const uniqueQuestions = Array.from(uniqueMap.values());
-
-      const shuffled = uniqueQuestions.sort(() => 0.5 - Math.random());
-      const selection = shuffled.slice(0, 10);
-
-      const finalQuestions = selection.map((q, index) => ({
+      // Mapeamos las preguntas recibidas para asignarles el premio según su posición
+      const finalQuestions = data.map((q, index) => ({
         ...q,
-        prize: escalaPremios[index]
+        prize: escalaPremios[index] || 0
       }));
 
       setQuestions(finalQuestions);
     } catch (error) {
-      console.error('Error cargando preguntas del servidor:', error);
+      console.error('Error cargando preguntas desde Firebase:', error);
       setQuestions([]);
     }
   };
 
   /**
-   * Lógica para generar preguntas con IA y guardar el archivo JSON
+   * NUEVA LÓGICA: Genera con IA y guarda directamente en Firebase
    */
   const handleGenerateBank = async () => {
     setIsGenerating(true);
     try {
-      // Obtenemos textos de preguntas actuales para que la IA intente no repetirlas
       const existingTexts = questions.map(q => q.question);
-      
       const data = await generateQuizData(existingTexts);
       
       if (data && data.questions && data.questions.length > 0) {
-        // Enviamos al backend para que lo guarde en `Frontend/src/data`
-        try {
-          const resp = await fetch('http://localhost:5000/api/save-questions', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ questions: data.questions })
-          });
+        // ENVIAR A FIREBASE (A través del backend)
+        const resp = await fetch('http://localhost:5000/api/save-generated-questions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data.questions) // Enviamos el array directamente
+        });
 
-          const result = await resp.json();
-          if (result.success) {
-            alert(`✅ Preguntas guardadas en: ${result.filename}`);
-          } else {
-            console.error('Error guardando en backend:', result);
-            alert('❌ Error guardando preguntas en el backend. Revisa la consola.');
-          }
-        } catch (postErr) {
-          console.error('Fallo al conectar con backend:', postErr);
-          alert('❌ No se pudo conectar con el backend para guardar las preguntas.\nAsegúrate de que está corriendo en http://localhost:5000');
+        const result = await resp.json();
+        if (resp.ok) {
+          alert(`✅ ¡Éxito! Las preguntas se guardaron en Firebase Cloud Firestore.`);
+        } else {
+          throw new Error(result.error || "Error al guardar en la nube");
         }
       }
     } catch (error) {
-      console.error("Error al generar banco:", error);
+      console.error("Error en el proceso:", error);
       alert("❌ Error: " + error.message);
     } finally {
       setIsGenerating(false);
@@ -116,42 +88,31 @@ function App() {
     }
   }, [view]);
 
-  /**
-   * Guarda el puntaje en LocalStorage
-   */
+  // --- Lógica de Scoreboard (LocalStorage se mantiene igual por ahora) ---
   const saveScore = (name, score) => {
     const saved = JSON.parse(localStorage.getItem('scores') || '[]');
     const newEntry = { 
       name: name || "Anónimo", 
       score: score, 
-      date: new Date().toLocaleString() // Guardamos fecha y hora
+      date: new Date().toLocaleString() 
     };
-    
-    // Guardamos todos los registros ordenados por puntaje
     const updatedScores = [...saved, newEntry].sort((a, b) => b.score - a.score);
-      
     localStorage.setItem('scores', JSON.stringify(updatedScores));
   };
 
   const clearScores = () => {
-    if (window.confirm("¿Estás seguro de que quieres borrar todo el historial de puntuaciones?")) {
+    if (window.confirm("¿Estás seguro?")) {
       localStorage.removeItem('scores');
-      // Forzamos un re-render o alerta si es necesario
       alert("Historial borrado.");
     }
   };
 
   return (
     <div className="app-container">
-      {view === 'menu' && (
-        <MainMenu setView={setView} />
-      )}
+      {view === 'menu' && <MainMenu setView={setView} />}
 
       {view === 'setup' && (
-        <SetupPlayer 
-          setView={setView} 
-          setPlayerName={setPlayerName} 
-        />
+        <SetupPlayer setView={setView} setPlayerName={setPlayerName} />
       )}
 
       {view === 'game' && questions.length > 0 && (
@@ -165,12 +126,7 @@ function App() {
         />
       )}
 
-      {view === 'scores' && (
-        <Scoreboard 
-          setView={setView} 
-          clearScores={clearScores} // Pasamos la nueva función
-        />
-      )}
+      {view === 'scores' && <Scoreboard setView={setView} clearScores={clearScores} />}
 
       {view === 'settings' && (
         <Settings 
@@ -179,14 +135,13 @@ function App() {
           setWildcardActive={setWildcardActive} 
           difficultyTime={difficultyTime} 
           setDifficultyTime={setDifficultyTime} 
-          onGenerateBank={handleGenerateBank} // Pasamos la función al componente
+          onGenerateBank={handleGenerateBank} 
         />
       )}
 
-      {/* Overlay opcional de carga para la IA */}
       {isGenerating && (
         <div className="loading-overlay">
-          <p>Generando nuevas preguntas con IA...</p>
+          <p>Subiendo nuevas preguntas a Firebase...</p>
         </div>
       )}
     </div>
